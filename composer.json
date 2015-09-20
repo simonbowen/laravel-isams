@@ -1,0 +1,33 @@
+{
+  "name": "simonbowen/isams-drivers",
+  "description": "Drivers to allow connection to iSAMs schools system via MSSQL or XML",
+  "keywords": ["isams"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Simon Bowen",
+      "email": "simon@xiano.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/database": "~5.1",
+    "illuminate/support": "~5.1"
+
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "phpunit/phpunit": "~4.0",
+    "mockery/mockery": "~0.9.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "SimonBowen\\IsamsDrivers\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/BaseTest.php"
+    ]
+  }
+}
