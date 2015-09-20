@@ -58,7 +58,7 @@ class IsamsDriversProvider extends ServiceProvider {
         $this->app->bind(StaffRepositoryContract::class, function() {
             return new XmlStaffRepository(
                 new Loader(),
-                new XmlStaffHydrator(new Staff()),
+                new XmlStaffHydrator(new StaffEntity()),
                 new XmlSetHydrator(new Set())
             );
         });
