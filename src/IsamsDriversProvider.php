@@ -59,7 +59,7 @@ class IsamsDriversProvider extends ServiceProvider {
             return new XmlStaffRepository(
                 new Loader(),
                 new XmlStaffHydrator(new StaffEntity()),
-                new XmlSetHydrator(new Set())
+                new XmlSetHydrator(new SetEntity())
             );
         });
 
