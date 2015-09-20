@@ -1,5 +1,5 @@
 {
-  "name": "simonbowen/isams-drivers",
+  "name": "simonbowen/laravel-isams",
   "description": "Drivers to allow connection to iSAMs schools system via MSSQL or XML",
   "keywords": ["isams"],
   "license": "MIT",
