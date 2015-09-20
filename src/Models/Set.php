@@ -2,12 +2,10 @@
 
 namespace SimonBowen\IsamsDrivers\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use SimonBowen\IsamsDrivers\Eloquent\Relations\SetPupils;
+use SimonBowen\IsamsDrivers\Eloquent\Relations\SetStaff;
 
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Relations\SetPupils;
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Relations\StaffSets;
-
-class Set extends Model {
+class Set extends BaseModel {
 
     protected $table = 'TblTeachingManagerSets';
     protected $primaryKey = 'TblTeachingManagerSetsID';

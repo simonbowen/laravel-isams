@@ -2,11 +2,9 @@
 
 namespace SimonBowen\IsamsDrivers\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use SimonBowen\IsamsDrivers\Eloquent\Relations\PupilSets;
 
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Relations\PupilSets;
-
-class Pupil extends Model {
+class Pupil extends BaseModel {
 
     protected $table = 'TblPupilManagementPupils';
     protected $primaryKey = 'TblPupilManagementPupilsID';

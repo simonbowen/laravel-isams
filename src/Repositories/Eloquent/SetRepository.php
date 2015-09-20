@@ -37,7 +37,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
 
     public function getTeachers($id)
     {
-        $set = $this->getById($id);
+        $set = $this->model->find($id);
 
         $teachers = $set->teachers;
         $collection = new Collection();
@@ -45,6 +45,8 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
         foreach ($teachers as $teacher) {
             $collection->push($this->staffHydrator->hydrate($teacher));
         }
+
+        $collection->push($this->getPrimaryTeacher($id));
 
         return $collection;
     }
@@ -63,7 +65,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
 
     public function getPrimaryTeacher($id)
     {
-        $primaryTeacher = $this->getById($id)->primary_teacher;
+        $primaryTeacher = $this->model->find($id)->primary_teacher;
         return $this->staffHydrator->hydrate($primaryTeacher);
     }
 

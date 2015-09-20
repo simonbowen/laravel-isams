@@ -22,6 +22,10 @@ class SetHydrator {
         $entity->setName($model->txtName);
         $entity->setSetCode($model->txtSetCode);
 
+        foreach ($model->teachers as $teacher) {
+            $entity->addTeacher($teacher->id);
+        }
+
         return $entity;
     }
 

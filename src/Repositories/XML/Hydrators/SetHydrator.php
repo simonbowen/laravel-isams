@@ -22,8 +22,10 @@ class SetHydrator {
         $entity->setName( (string) $data->Name);
         $entity->setSetCode( (string) $data->SetCode);
 
-        foreach ($data->Teachers->Teacher as $teacher) {
-            $entity->addTeacher((int) $teacher->attributes()->StaffId);
+        if (count($data->Teachers->Teacher) > 0) {
+            foreach ($data->Teachers->Teacher as $teacher) {
+                $entity->addTeacher((int) $teacher->attributes()->StaffId);
+            }
         }
 
         return $entity;

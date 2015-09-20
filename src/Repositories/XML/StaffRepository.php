@@ -8,6 +8,7 @@ use SimonBowen\IsamsDrivers\Repositories\Contracts\StaffRepository as StaffRepos
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\StaffNotFound;
+use SimonBowen\IsamsDrivers\XML\Loader;
 
 
 class StaffRepository extends BaseRepository implements StaffRepositoryContract {
@@ -16,14 +17,14 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
     protected $setHydrator;
 
     public function __construct(
-        \SimpleXMLElement $xml,
+        Loader $loader,
         StaffHydrator $staffHydrator,
         SetHydrator $setHydrator
     )
     {
         $this->staffHydrator = $staffHydrator;
         $this->setHydrator = $setHydrator;
-        parent::__construct($xml);
+        parent::__construct($loader);
     }
 
     /**

@@ -9,6 +9,7 @@ use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\SetNotFound;
+use SimonBowen\IsamsDrivers\XML\Loader;
 
 class SetRepository extends BaseRepository implements SetRepositoryContract  {
 
@@ -17,13 +18,13 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
     protected $pupilHydrator;
 
     /**
-     * @param \SimpleXMLElement $xml
+     * @param Loader $loader
      * @param SetHydrator $setHydrator
      * @param StaffHydrator $staffHydrator
      * @param PupilHydrator $pupilHydrator
      */
     public function __construct(
-        \SimpleXMLElement $xml,
+        Loader $loader,
         SetHydrator $setHydrator,
         StaffHydrator $staffHydrator,
         PupilHydrator $pupilHydrator
@@ -32,7 +33,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
         $this->setHydrator = $setHydrator;
         $this->staffHydrator = $staffHydrator;
         $this->pupilHydrator = $pupilHydrator;
-        parent::__construct($xml);
+        parent::__construct($loader);
     }
 
     /**

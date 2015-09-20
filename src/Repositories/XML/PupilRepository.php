@@ -7,13 +7,13 @@ use Illuminate\Support\Collection;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\PupilRepository as PupilRepositoryContract;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound;
-use SimonBowen\IsamsDrivers\Repositories\XML\BaseRepository;
+use SimonBowen\IsamsDrivers\XML\Loader;
 
 class PupilRepository extends BaseRepository implements PupilRepositoryContract {
 
     protected $pupilHydrator;
 
-    public function __construct(\SimpleXMLElement $xml, PupilHydrator $pupilHydrator)
+    public function __construct(Loader $xml, PupilHydrator $pupilHydrator)
     {
         $this->pupilHydrator = $pupilHydrator;
         parent::__construct($xml);

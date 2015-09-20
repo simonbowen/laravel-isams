@@ -2,11 +2,9 @@
 
 namespace SimonBowen\IsamsDrivers\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 use SimonBowen\IsamsDrivers\Eloquent\Relations\StaffSets;
 
-class Staff extends Model {
+class Staff extends BaseModel {
 
     protected $table = 'TblStaff';
     protected $primaryKey = 'TblStaffID';
