@@ -12,8 +12,9 @@
   "require": {
     "php": ">=5.4.0",
     "illuminate/database": "~5.1",
-    "illuminate/support": "~5.1"
-
+    "illuminate/support": "~5.1",
+    "illuminate/cache": "~5.1",
+    "illuminate/config": "~5.1"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
