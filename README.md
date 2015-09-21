@@ -34,7 +34,7 @@ return [
 Add ```SimonBowen\IsamsDrivers\IsamsDriversServiceProvider``` to your Service Providers configuration found in config/app.php
 
 # Usage
-This package current provides three repositorys.
+This package currently provides three repositorys.
 
 * StaffRepository
 * PupilRepository
