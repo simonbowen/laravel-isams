@@ -28,3 +28,42 @@ return [
     ]
   ]
 ];
+```
+
+## Service Provider
+Add ```SimonBowen\IsamsDrivers\IsamsDriversServiceProvider``` to your Service Providers configuration found in config/app.php
+
+# Usage
+This package current provides three repositorys.
+
+* StaffRepository
+* PupilRepository
+* SetRepository
+
+These can be injected via Laravels IOC
+
+```php
+
+use SimonBowen\IsamsDrivers\Repositories\Contracts\StaffRepository;
+
+class DemoController extends Controller {
+  
+  protected $repository;
+  
+  public function __construct(StaffRepository $repository)
+  {
+    $this->repository = $repository;
+  }
+  
+  public function index()
+  {
+    $staff = $this->repository->all();
+    dd($staff);
+  }
+  
+}
+```
+
+Be sure to check out the interfaces located in ```SimonBowen\IsamsDrivers\Repositories\Contracts``` for more information on available methods.
+
+
