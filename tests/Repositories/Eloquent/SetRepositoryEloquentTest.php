@@ -7,12 +7,14 @@ class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
     protected function generateSet()
     {
         $faker = Faker\Factory::create();
-        $set = new \SimonBowen\IsamsDrivers\Models\Set();
+        $set = new \SimonBowen\IsamsDrivers\Models\Set;
 
         $setName = $faker->word;
+
         $set->TblTeachingManagerSetsID = $faker->randomNumber();
         $set->txtName = $setName;
         $set->txtSetCode = $setName;
+        $set->teachers = [];
 
         return $set;
     }
@@ -38,6 +40,7 @@ class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
 
     public function test_get_all_sets()
     {
+
         $model = m::mock(\SimonBowen\IsamsDrivers\Models\Set::class);
         $model->shouldReceive('all')->once()->andReturn($this->getData());
 
@@ -45,6 +48,9 @@ class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
         $sets = $repository->all();
 
         $this->assertEquals(count($sets), 5);
+
+        $model = m::mock(\SimonBowen\IsamsDrivers\Models\Set::class);
+        $model->shouldReceive('all')->once()->andReturn($this->getData());
     }
 
     public function test_get_set_by_id()

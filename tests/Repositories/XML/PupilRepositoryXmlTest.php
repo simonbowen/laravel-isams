@@ -1,13 +1,18 @@
 <?php
 
+use Mockery as m;
+
 class PupilRepositoryXmlTest extends PHPUnit_Framework_TestCase {
 
     public function getRepository()
     {
-        $xml = simplexml_load_file('./tests/data.xml');
+        $loader = m::mock(SimonBowen\IsamsDrivers\XML\Loader::class);
+        $loader->shouldReceive('get')
+            ->andReturn(simplexml_load_file('./tests/data.xml'));
+
         $entity = new \SimonBowen\IsamsDrivers\Entities\Pupil();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator($entity);
-        $pupilRepository = new \SimonBowen\IsamsDrivers\Repositories\XML\PupilRepository($xml, $hydrator);
+        $pupilRepository = new \SimonBowen\IsamsDrivers\Repositories\XML\PupilRepository($loader, $hydrator);
         return $pupilRepository;
     }
 

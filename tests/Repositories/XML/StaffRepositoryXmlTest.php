@@ -1,10 +1,14 @@
 <?php
 
+use Mockery as m;
+
 class StaffRepositoryTest extends PHPUnit_Framework_TestCase {
 
     public function getRepository()
     {
-        $xml = simplexml_load_file('./tests/data.xml');
+        $loader = m::mock(SimonBowen\IsamsDrivers\XML\Loader::class);
+        $loader->shouldReceive('get')
+            ->andReturn(simplexml_load_file('./tests/data.xml'));
 
         $staffEntity = new \SimonBowen\IsamsDrivers\Entities\Staff();
         $staffHydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator($staffEntity);
@@ -12,7 +16,7 @@ class StaffRepositoryTest extends PHPUnit_Framework_TestCase {
         $setEntity = new \SimonBowen\IsamsDrivers\Entities\Set();
         $setHydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator($setEntity);
 
-        $staffRepository = new \SimonBowen\IsamsDrivers\Repositories\XML\StaffRepository($xml, $staffHydrator, $setHydrator);
+        $staffRepository = new \SimonBowen\IsamsDrivers\Repositories\XML\StaffRepository($loader, $staffHydrator, $setHydrator);
 
         return $staffRepository;
     }
