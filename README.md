@@ -11,6 +11,8 @@ This package aims to allow you to use either but maintain the same interface.
 
 # Setup
 
+```php artisan vendor:publish```
+
 ## Config Example
 
 ```php
