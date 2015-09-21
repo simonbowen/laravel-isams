@@ -1,4 +1,4 @@
-<img src="https://travis-ci.org/simonbowen/laravel-isams.svg?branch=master" />
+<a href="https://travis-ci.org/simonbowen/laravel-isams"><img src="https://travis-ci.org/simonbowen/laravel-isams.svg?branch=master" /></a>
 
 # laravel-isams
 Package to integrate iSAMs data connections in laravel
