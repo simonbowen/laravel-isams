@@ -4,7 +4,7 @@ namespace SimonBowen\IsamsDrivers\Entities;
 
 use SimonBowen\IsamsDrivers\Entities\Contracts\BoardingHouse as BoardingHouseContract;
 
-class BoardingHouse extends Entity implements BoardingHouseContract {
+class BoardingHouse implements BoardingHouseContract {
 
     protected $name;
     protected $id;

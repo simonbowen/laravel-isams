@@ -2,7 +2,4 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Exceptions;
 
-class PupilNotFound extends \Exception {
-
-
-}
+class PupilNotFound extends \Exception {}

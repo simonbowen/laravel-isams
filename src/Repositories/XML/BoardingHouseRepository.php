@@ -2,6 +2,9 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\XML;
 
+use Illuminate\Support\Collection;
+
+use SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\BoardingHouseHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\BoardingHouseRepository as BoardingHouseRepositoryContract;
 use SimonBowen\IsamsDrivers\XML\Loader;
@@ -18,8 +21,19 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
 
     public function all()
     {
-        $houses = $this->xml->xpath('//iSAMS/SchoolManager/BoardingHouses');
+        $houses = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/*");
         return $this->hydrateAll($houses);
+    }
+
+    public function getById($id)
+    {
+        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@id={$id}]");
+
+        if ( ! isset($house[0])) {
+            throw new BoardingHouseNotFound();
+        }
+
+        return $this->hydrate($house[0]);
     }
 
     private function hydrateAll($boardingHouses) {
