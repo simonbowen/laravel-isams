@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class StaffRepositoryTest extends PHPUnit_Framework_TestCase {
+class StaffRepositoryTest extends BaseTest {
 
     public function getRepository()
     {

@@ -2,6 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Models;
 
+use Config;
+
 use Illuminate\Database\Eloquent\Model;
 
 class BaseModel extends Model {
