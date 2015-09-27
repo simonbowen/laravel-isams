@@ -35,10 +35,10 @@ class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase {
         $house = $repository->getById(4);
 
         $this->assertEquals(4, $house->getId(4));
-        $this->assertEquals('Anson', $house->getName());
+        $this->assertEquals('Blue', $house->getName());
         $this->assertEquals(223, $house->getHousemasterId());
         $this->assertEquals('F', $house->getSex());
-        $this->assertEquals('AN', $house->getCode());
+        $this->assertEquals('BL', $house->getCode());
     }
 
     /**

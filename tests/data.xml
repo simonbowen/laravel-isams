@@ -173,8 +173,8 @@
             <House id="4" HouseMasterId="223" AssistantHouseMasterId="326">
                 <HouseMaster Legacy="True">SusaraDuToit135615794032576</HouseMaster>
                 <AssistantHouseMaster Legacy="True">LJA29333722646956807</AssistantHouseMaster>
-                <Name>Anson</Name>
-                <Code>AN</Code>
+                <Name>Blue</Name>
+                <Code>BL</Code>
                 <Type>Boarding</Type>
                 <Sex>F</Sex>
                 <Address1 />
@@ -189,8 +189,8 @@
             <House id="1" HouseMasterId="333" AssistantHouseMasterId="430">
                 <HouseMaster Legacy="True">EJM26039874978470404</HouseMaster>
                 <AssistantHouseMaster Legacy="True">GEC30293817158816004</AssistantHouseMaster>
-                <Name>Blake</Name>
-                <Code>BK</Code>
+                <Name>Green</Name>
+                <Code>GR</Code>
                 <Type>Boarding</Type>
                 <Sex>U</Sex>
                 <Address1 />
