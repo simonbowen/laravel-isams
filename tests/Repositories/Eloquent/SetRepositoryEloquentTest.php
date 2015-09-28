@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
+class SetRepositoryEloquentTest extends BaseTest {
 
     protected function generateSet()
     {
@@ -40,7 +40,6 @@ class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
 
     public function test_get_all_sets()
     {
-
         $model = m::mock(\SimonBowen\IsamsDrivers\Models\Set::class);
         $model->shouldReceive('all')->once()->andReturn($this->getData());
 
@@ -48,9 +47,6 @@ class SetRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
         $sets = $repository->all();
 
         $this->assertEquals(count($sets), 5);
-
-        $model = m::mock(\SimonBowen\IsamsDrivers\Models\Set::class);
-        $model->shouldReceive('all')->once()->andReturn($this->getData());
     }
 
     public function test_get_set_by_id()

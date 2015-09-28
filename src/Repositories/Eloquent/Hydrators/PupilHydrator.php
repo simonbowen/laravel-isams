@@ -3,7 +3,7 @@
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators;
 
 use SimonBowen\IsamsDrivers\Models\Pupil;
-use SimonBowen\IsamsDrivers\Entities\Pupil as PupilEntity;
+use SimonBowen\IsamsDrivers\Entities\Contracts\Pupil as PupilEntity;
 
 class PupilHydrator {
 

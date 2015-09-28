@@ -60,6 +60,10 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract 
         return $this->hydrate($pupil[0]);
     }
 
+    /**
+     * @param $house
+     * @return Collection
+     */
     public function getByBoardingHouse($house)
     {
         $pupils = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[BoardingHouse = '{$house}']");

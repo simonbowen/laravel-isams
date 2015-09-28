@@ -10,4 +10,6 @@ interface PupilRepository {
 
     public function getByEmail($email);
 
+    public function getByBoardingHouse($house);
+
 }

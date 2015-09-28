@@ -14,4 +14,6 @@ class Pupil extends BaseModel {
         return new PupilSets((new Set)->newQuery(), $this, 'TblTeachingManagerSetLists', 'txtSchoolID', 'intSetID');
     }
 
+
+
 }

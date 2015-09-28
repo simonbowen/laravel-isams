@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class StaffRepositoryEloquentTest extends PHPUnit_Framework_TestCase {
+class StaffRepositoryEloquentTest extends BaseTest {
 
     protected function getRepository(\SimonBowen\IsamsDrivers\Models\Staff $model)
     {

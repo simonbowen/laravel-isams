@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class PupilRepositoryEloquentTest extends \BaseTest {
+class PupilRepositoryEloquentTest extends BaseTest {
 
     protected function generatePupil()
     {

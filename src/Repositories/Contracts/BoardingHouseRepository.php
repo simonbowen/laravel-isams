@@ -6,4 +6,6 @@ interface BoardingHouseRepository {
 
     public function all();
 
+    public function getById($id);
+
 }

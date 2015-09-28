@@ -64,6 +64,12 @@ class PupilRepository implements PupilRepositoryContract {
         return $this->hydrate($pupil);
     }
 
+    public function getByBoardingHouse($house)
+    {
+        $pupils = $this->model->where('txtBoardingHouse', $house)->get();
+        return $this->hydrateAll($pupils);
+    }
+
     /**
      * @param Pupil $model
      * @return static
