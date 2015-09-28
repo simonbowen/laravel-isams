@@ -38,6 +38,7 @@ class IsamsDriversProvider extends ServiceProvider {
 
     public function register()
     {
+        $this->registerEntities();
         $driver = app('config')->get('isams.driver');
         if ($driver == 'xml') {
             $this->registerXml();
@@ -46,29 +47,47 @@ class IsamsDriversProvider extends ServiceProvider {
         }
     }
 
+    public function registerEntities()
+    {
+        $this->app->bind(
+            \SimonBowen\IsamsDrivers\Entities\Contracts\Staff::class,
+            \SimonBowen\IsamsDrivers\Entities\Staff::class
+        );
+
+        $this->app->bind(
+            \SimonBowen\IsamsDrivers\Entities\Contracts\Pupil::class,
+            \SimonBowen\IsamsDrivers\Entities\Pupil::class
+        );
+
+        $this->app->bind(
+            \SimonBowen\IsamsDrivers\Entities\Contracts\Set::class,
+            \SimonBowen\IsamsDrivers\Entities\Set::class
+        );
+    }
+
     public function registerXml()
     {
         $this->app->bind(PupilRepositoryContract::class, function () {
             return new XmlPupilRepository(
                 new Loader(),
-                new XmlPupilHydrator(new PupilEntity())
+                new XmlPupilHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Pupil::class))
             );
         });
 
         $this->app->bind(StaffRepositoryContract::class, function() {
             return new XmlStaffRepository(
                 new Loader(),
-                new XmlStaffHydrator(new StaffEntity()),
-                new XmlSetHydrator(new SetEntity())
+                new XmlStaffHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Staff::class)),
+                new XmlSetHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Set::class))
             );
         });
 
         $this->app->bind(SetRepositoryContract::class, function() {
             return new XmlSetRepository(
                 new Loader(),
-                new XmlSetHydrator(new SetEntity()),
-                new XmlStaffHydrator(new StaffEntity()),
-                new XmlPupilHydrator(new PupilEntity())
+                new XmlSetHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Set::class)),
+                new XmlStaffHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Staff::class)),
+                new XmlPupilHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Pupil::class))
             );
         });
 
@@ -79,7 +98,7 @@ class IsamsDriversProvider extends ServiceProvider {
         $this->app->bind(PupilRepositoryContract::class, function() {
             return new EloquentPupilRepository(
                 new Pupil(),
-                new EloquentPupilHydrator(new PupilEntity())
+                new EloquentPupilHydrator(app(\SimonBowen\IsamsDrivers\Entities\Contracts\Pupil::class))
             );
         });
 
