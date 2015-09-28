@@ -8,4 +8,6 @@ interface BoardingHouseRepository {
 
     public function getById($id);
 
+    public function getByHousemasterId($id);
+
 }

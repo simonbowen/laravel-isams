@@ -36,6 +36,17 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
         return $this->hydrate($house[0]);
     }
 
+    public function getByHousemasterId($id)
+    {
+        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@HouseMasterId={$id}]");
+
+        if ( ! isset($house[0])) {
+            throw new BoardingHouseNotFound;
+        }
+
+        return $this->hydrate($house);
+    }
+
     private function hydrateAll($boardingHouses) {
         $collection = new Collection();
         foreach ($boardingHouses as $house) {

@@ -36,6 +36,22 @@ class BoardingHouseRepository implements BoardingHouseRepositoryContract {
         return $this->hydrate($house);
     }
 
+    public function getByHousemasterId($id)
+    {
+        $house = $this
+            ->model
+            ->select('TblSchoolManagementHouses.*')
+            ->join('TblStaff', 'TblStaff.User_Code', '=', 'TblSchoolManagementHouses.txtHouseMaster')
+            ->where('TblStaff.TblStaffID', '=', $id)
+            ->get();
+
+        if ( ! $house) {
+            throw new BoardingHouseNotFound;
+        }
+
+        return $this->hydrate($house);
+    }
+
     public function hydrate($model)
     {
         return $this->hydrator->hydrate($model);
