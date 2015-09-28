@@ -44,7 +44,7 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
             throw new BoardingHouseNotFound;
         }
 
-        return $this->hydrate($house);
+        return $this->hydrate($house[0]);
     }
 
     private function hydrateAll($boardingHouses) {
