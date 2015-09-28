@@ -37,7 +37,7 @@ class BoardingHouseRepositoryEloquentTest extends BaseTest {
 
     public function test_get_all_boarding_houses()
     {
-        
+
     }
 
     // TODO: Work out a way to create tests that work when hydrating an object that uses a related model
