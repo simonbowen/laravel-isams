@@ -35,6 +35,7 @@ class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($set->getName(), 'SETCODE1');
         $this->assertEquals($set->getSetCode(), 'SETCODE1');
         $this->assertEquals(count($set->getTeachers()), 2);
+        $this->assertEquals(7, $set->getYear());
     }
 
     public function test_get_pupils_for_set()

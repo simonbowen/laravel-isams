@@ -21,6 +21,7 @@ class SetHydrator {
         $entity->setId( (int) $data->attributes()->id);
         $entity->setName( (string) $data->Name);
         $entity->setSetCode( (string) $data->SetCode);
+        $entity->setYear( (int) $data->attributes()->YearId);
 
         if (count($data->Teachers->Teacher) > 0) {
             foreach ($data->Teachers->Teacher as $teacher) {

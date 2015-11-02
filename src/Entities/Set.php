@@ -10,6 +10,7 @@ class Set implements SetContract {
     protected $setCode;
     protected $name;
     protected $teachers = [];
+    protected $year;
 
     public function getId()
     {
@@ -52,6 +53,17 @@ class Set implements SetContract {
     public function addTeacher($teacher)
     {
         $this->teachers[] = $teacher;
+        return $this;
+    }
+
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    public function setYear($year)
+    {
+        $this->year = $year;
         return $this;
     }
 
