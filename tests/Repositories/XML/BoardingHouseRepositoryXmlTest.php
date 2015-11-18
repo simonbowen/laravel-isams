@@ -8,9 +8,11 @@ class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase {
 
     public function getRepository()
     {
+        $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
+
         $loader = m::mock(SimonBowen\IsamsDrivers\XML\Loader::class);
         $loader->shouldReceive('get')
-            ->andReturn(simplexml_load_file('./tests/data.xml'));
+            ->andReturn($manager);
 
         $entity = new \SimonBowen\IsamsDrivers\Entities\BoardingHouse();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\BoardingHouseHydrator($entity);

@@ -15,7 +15,7 @@ class Loader {
             return file_get_contents($url);
         });
 
-        return simplexml_load_string($xml);
+        return new Manager($xml);
     }
 
 }

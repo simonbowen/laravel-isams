@@ -14,8 +14,10 @@ class PupilHydrator {
         $this->entity = $entity;
     }
 
-    public function hydrate(\SimpleXMLElement $pupil)
+    public function hydrate(\DOMNode $node)
     {
+        $pupil = simplexml_import_dom($node);
+
         /** @var Pupil $entity */
         $entity = $this->entity->newInstance();
 

@@ -13,8 +13,9 @@ class BoardingHouseHydrator {
         $this->boardingHouse = $boardingHouse;
     }
 
-    public function hydrate(\SimpleXMLElement $data)
+    public function hydrate(\DOMNode $data)
     {
+        $data = simplexml_import_dom($data);
         $entity = $this->boardingHouse->newInstance();
 
         $entity->setName( (string) $data->Name);

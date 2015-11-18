@@ -6,9 +6,11 @@ class PupilRepositoryXmlTest extends BaseTest {
 
     public function getRepository()
     {
+        $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
+
         $loader = m::mock(SimonBowen\IsamsDrivers\XML\Loader::class);
         $loader->shouldReceive('get')
-            ->andReturn(simplexml_load_file('./tests/data.xml'));
+            ->andReturn($manager);
 
         $entity = new \SimonBowen\IsamsDrivers\Entities\Pupil();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator($entity);
@@ -106,6 +108,35 @@ class PupilRepositoryXmlTest extends BaseTest {
     {
         $repository = $this->getRepository();
         $pupil = $repository->getByEmail('9krayr@isams.org');
+
+        $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Pupil', $pupil);
+        $this->assertEquals($pupil->getId(), 2);
+        $this->assertEquals($pupil->getName(), 'Reginald Kray');
+        $this->assertEquals($pupil->getEmail(), '9krayr@isams.org');
+        $this->assertEquals($pupil->getSchoolCode(), '18031');
+        $this->assertEquals($pupil->getSchoolId(), '1630688728');
+        $this->assertEquals($pupil->getUserCode(), 'ReginaldKray103117279191232');
+        $this->assertEquals($pupil->getUserName(), '9krayr');
+        $this->assertEquals($pupil->getTitle(), 'Mr');
+        $this->assertEquals($pupil->getForename(), 'Reginald');
+        $this->assertEquals($pupil->getSurname(), 'Kray');
+        $this->assertEquals($pupil->getMiddlename(), '');
+        $this->assertEquals($pupil->getInitials(), 'RK');
+        $this->assertEquals($pupil->getPreferredName(), 'Reg');
+        $this->assertEquals($pupil->getFullname(), 'Reginald Kray');
+        $this->assertEquals($pupil->getGender(), 'M');
+        $this->assertEquals($pupil->getDOB(), '1999-01-01T00:00:00');
+        $this->assertEquals($pupil->getBoardingHouse(), 'Blue');
+        $this->assertEquals($pupil->getPupilType(), 'Day Boarder');
+        $this->assertEquals($pupil->getEnrolmentDate(), '2015-09-07T00:00:00');
+        $this->assertEquals($pupil->getEnrolmentTerm(), 'EnrolmentTerm');
+        $this->assertEquals($pupil->getEnrolmentSchoolYear(), '2009');
+    }
+
+    public function test_get_pupil_by_email_caseinsensitive()
+    {
+        $repository = $this->getRepository();
+        $pupil = $repository->getByEmail('9Krayr@isams.org');
 
         $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Pupil', $pupil);
         $this->assertEquals($pupil->getId(), 2);

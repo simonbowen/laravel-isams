@@ -6,9 +6,11 @@ class StaffRepositoryTest extends BaseTest {
 
     public function getRepository()
     {
+        $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
+
         $loader = m::mock(SimonBowen\IsamsDrivers\XML\Loader::class);
         $loader->shouldReceive('get')
-            ->andReturn(simplexml_load_file('./tests/data.xml'));
+            ->andReturn($manager);
 
         $staffEntity = new \SimonBowen\IsamsDrivers\Entities\Staff();
         $staffHydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator($staffEntity);

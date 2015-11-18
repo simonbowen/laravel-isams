@@ -13,8 +13,10 @@ class SetHydrator {
         $this->entity = $entity;
     }
 
-    public function hydrate(\SimpleXMLElement $data)
+    public function hydrate(\DOMNode $node)
     {
+        $data = simplexml_import_dom($node);
+
         /** @var Set $entity */
         $entity = $this->entity->newInstance();
 

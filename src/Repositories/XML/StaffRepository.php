@@ -98,10 +98,10 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
     }
 
     /**
-     * @param \SimpleXMLElement $data
+     * @param \DOMNode $data
      * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
      */
-    private function hydrate(\SimpleXMLElement $data)
+    private function hydrate(\DOMNode $data)
     {
         return $this->staffHydrator->hydrate($data);
     }

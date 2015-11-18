@@ -13,8 +13,10 @@ class StaffHydrator {
         $this->entity = $entity;
     }
 
-    public function hydrate(\SimpleXMLElement $data)
+    public function hydrate(\DOMNode $data)
     {
+        $data = simplexml_import_dom($data);
+
         /** @var Staff $entity */
         $entity = $this->entity->newInstance();
 

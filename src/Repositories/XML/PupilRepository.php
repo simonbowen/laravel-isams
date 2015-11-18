@@ -51,7 +51,8 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract 
      */
     public function getByEmail($email)
     {
-        $pupil = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[EmailAddress = '{$email}']");
+        $email = strtolower($email);
+        $pupil = $this->xml->xpath('/iSAMS/PupilManager/CurrentPupils/Pupil[php:functionString("strtolower", EmailAddress) = "' . $email . '"]');
 
         if ( ! isset($pupil[0])) {
             throw new PupilNotFound("Pupil not found with Email {$email}");
@@ -89,7 +90,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract 
      * @param $pupil
      * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Pupil
      */
-    private function hydrate($pupil)
+    private function hydrate(\DOMNode $pupil)
     {
         return $this->pupilHydrator->hydrate($pupil);
     }
