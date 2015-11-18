@@ -16,7 +16,7 @@ class Manager {
 
     public function xpath($path)
     {
-        return $this->domXpath->query($path);
+        return iterator_to_array($this->domXpath->query($path));
     }
 
 }
