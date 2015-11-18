@@ -60,6 +60,15 @@ class StaffRepositoryTest extends BaseTest {
         $this->assertEquals($staff->getId(), 1);
     }
 
+    public function test_get_staff_member_by_email_caseinsensitive()
+    {
+        $staffRepository = $this->getRepository();
+        $staff = $staffRepository->getByEmail('SBOWEN@isams.com');
+
+        $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Staff', $staff);
+        $this->assertEquals($staff->getId(), 1);
+    }
+
     public function test_get_sets_teacher()
     {
         $repository = $this->getRepository();

@@ -50,7 +50,8 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
      */
     public function getByEmail($email)
     {
-        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[SchoolEmailAddress = '{$email}']");
+        $email = strtolower($email);
+        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[php:functionString('strtolower', SchoolEmailAddress) = '{$email}']");
 
         if ( ! isset($staff[0])) {
             throw new StaffNotFound("Staff with Email {$email} not found");
