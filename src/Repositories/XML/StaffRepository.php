@@ -34,7 +34,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
      */
     public function getById($id)
     {
-        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@id={$id}]");
+        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$id}]");
 
         if ( ! isset($staff[0])) {
             throw new StaffNotFound("Staff with ID {$id} not found");

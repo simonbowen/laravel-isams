@@ -19,7 +19,7 @@ class BoardingHouseHydrator {
         $entity = $this->boardingHouse->newInstance();
 
         $entity->setName( (string) $data->Name);
-        $entity->setId( (int) $data->attributes()->id);
+        $entity->setId( (int) $data->attributes()->Id);
         $entity->setHousemasterId( (int) $data->attributes()->HouseMasterId);
         $entity->setCode( (string) $data->Code);
         $entity->setSex( (string) $data->Sex);

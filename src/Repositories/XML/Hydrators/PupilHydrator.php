@@ -21,7 +21,7 @@ class PupilHydrator {
         /** @var Pupil $entity */
         $entity = $this->entity->newInstance();
 
-        $entity->setId( (int) $pupil->attributes()->id);
+        $entity->setId( (int) $pupil->attributes()->Id);
         $entity->setEmail( (string) $pupil->EmailAddress);
         $entity->setName( (string) $pupil->Fullname);
         $entity->setSchoolCode( (string) $pupil->SchoolCode);

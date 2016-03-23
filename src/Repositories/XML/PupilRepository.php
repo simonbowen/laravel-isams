@@ -35,7 +35,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract 
      */
     public function getById($id)
     {
-        $pupil = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[@id={$id}]");
+        $pupil = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[@Id={$id}]");
 
         if ( ! isset($pupil[0])) {
             throw new PupilNotFound("Pupil not found with ID {$id}");

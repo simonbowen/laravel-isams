@@ -27,7 +27,7 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
 
     public function getById($id)
     {
-        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@id={$id}]");
+        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@Id={$id}]");
 
         if ( ! isset($house[0])) {
             throw new BoardingHouseNotFound();

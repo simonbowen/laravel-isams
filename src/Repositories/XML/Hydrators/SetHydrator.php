@@ -20,7 +20,7 @@ class SetHydrator {
         /** @var Set $entity */
         $entity = $this->entity->newInstance();
 
-        $entity->setId( (int) $data->attributes()->id);
+        $entity->setId( (int) $data->attributes()->Id);
         $entity->setName( (string) $data->Name);
         $entity->setSetCode( (string) $data->SetCode);
         $entity->setYear( (int) $data->attributes()->YearId);

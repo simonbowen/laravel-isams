@@ -1,7 +1,7 @@
 <iSAMS>
     <HRManager>
         <CurrentStaff>
-            <StaffMember id="1">
+            <StaffMember Id="1">
                 <PreviousMISId>1000</PreviousMISId>
                 <Initials>SEB</Initials>
                 <UserCode>SimonBowen65163237490240</UserCode>
@@ -18,7 +18,7 @@
                 <Gender>M</Gender>
                 <SchoolEmailAddress>sbowen@isams.com</SchoolEmailAddress>
             </StaffMember>
-            <StaffMember id="2">
+            <StaffMember Id="2">
                 <PreviousMISId>1001</PreviousMISId>
                 <Initials>AD</Initials>
                 <UserCode>RobertSmith29333722646956807</UserCode>
@@ -35,7 +35,7 @@
                 <Gender>M</Gender>
                 <SchoolEmailAddress>rsmith@isams.com</SchoolEmailAddress>
             </StaffMember>
-            <StaffMember id="3">
+            <StaffMember Id="3">
                 <PreviousMISId>1003</PreviousMISId>
                 <Initials>DA</Initials>
                 <UserCode>DamienAlborn94132280653568</UserCode>
@@ -56,7 +56,7 @@
     </HRManager>
     <TeachingManager>
         <Sets>
-            <Set id="1" SubjectId="1" YearId="7" AuthorId="1">
+            <Set Id="1" SubjectId="1" YearId="7" AuthorId="1">
                 <SubjectId Legacy="True">1</SubjectId>
                 <YearId Legacy="True">7</YearId>
                 <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
@@ -66,13 +66,13 @@
                 <SetCode>SETCODE1</SetCode>
                 <Name>SETCODE1</Name>
                 <Teachers>
-                    <Teacher id="1" StaffId="1" PrimaryTeacher="True" />
-                    <Teacher id="2" StaffId="2" PrimaryTeacher="False" />
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
                 </Teachers>
                 <Description />
                 <LastUpdated>2015-09-11T14:09:09</LastUpdated>
             </Set>
-            <Set id="2" SubjectId="1" YearId="7" AuthorId="1">
+            <Set Id="2" SubjectId="1" YearId="7" AuthorId="1">
                 <SubjectId Legacy="True">1</SubjectId>
                 <YearId Legacy="True">7</YearId>
                 <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
@@ -82,13 +82,13 @@
                 <SetCode>SETCODE1</SetCode>
                 <Name>SETCODE1</Name>
                 <Teachers>
-                    <Teacher id="1" StaffId="1" PrimaryTeacher="True" />
-                    <Teacher id="2" StaffId="2" PrimaryTeacher="False" />
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
                 </Teachers>
                 <Description />
                 <LastUpdated>2015-09-11T14:09:09</LastUpdated>
             </Set>
-            <Set id="3" SubjectId="1" YearId="7" AuthorId="1">
+            <Set Id="3" SubjectId="1" YearId="7" AuthorId="1">
                 <SubjectId Legacy="True">1</SubjectId>
                 <YearId Legacy="True">7</YearId>
                 <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
@@ -98,21 +98,21 @@
                 <SetCode>SETCODE1</SetCode>
                 <Name>SETCODE1</Name>
                 <Teachers>
-                    <Teacher id="1" StaffId="1" PrimaryTeacher="True" />
-                    <Teacher id="2" StaffId="2" PrimaryTeacher="False" />
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
                 </Teachers>
                 <Description />
                 <LastUpdated>2015-09-11T14:09:09</LastUpdated>
             </Set>
         </Sets>
         <SetLists>
-            <SetList id="1" SetId="1" PupilId="1" AuthorId="1">
+            <SetList Id="1" SetId="1" PupilId="1" AuthorId="1">
                 <SetId Legacy="True">1</SetId>
                 <SchoolId Legacy="True">1359077297161</SchoolId>
                 <Author Legacy="True"></Author>
                 <LastUpdated></LastUpdated>
             </SetList>
-            <SetList id="2" SetId="1" PupilId="2" AuthorId="1">
+            <SetList Id="2" SetId="1" PupilId="2" AuthorId="1">
                 <SetId Legacy="True">1</SetId>
                 <SchoolId Legacy="True">1359077297161</SchoolId>
                 <Author Legacy="True"></Author>
@@ -122,7 +122,7 @@
     </TeachingManager>
     <PupilManager>
         <CurrentPupils>
-            <Pupil id="1">
+            <Pupil Id="1">
                 <SchoolCode>17994</SchoolCode>
                 <SchoolId>1630785976</SchoolId>
                 <UserCode>9BOWENS001</UserCode>
@@ -144,7 +144,7 @@
                 <EnrolmentTerm>EnrolmentTerm</EnrolmentTerm>
                 <EnrolmentSchoolYear>2009</EnrolmentSchoolYear>
             </Pupil>
-            <Pupil id="2">
+            <Pupil Id="2">
                 <SchoolCode>18031</SchoolCode>
                 <SchoolId>1630688728</SchoolId>
                 <UserCode>ReginaldKray103117279191232</UserCode>
@@ -170,7 +170,7 @@
     </PupilManager>
     <SchoolManager>
         <BoardingHouses>
-            <House id="4" HouseMasterId="223" AssistantHouseMasterId="326">
+            <House Id="4" HouseMasterId="223" AssistantHouseMasterId="326">
                 <HouseMaster Legacy="True">SusaraDuToit135615794032576</HouseMaster>
                 <AssistantHouseMaster Legacy="True">LJA29333722646956807</AssistantHouseMaster>
                 <Name>Blue</Name>
@@ -186,7 +186,7 @@
                 <PrimaryEmail>anson@royalhospitalschool.org</PrimaryEmail>
                 <Website />
             </House>
-            <House id="1" HouseMasterId="333" AssistantHouseMasterId="430">
+            <House Id="1" HouseMasterId="333" AssistantHouseMasterId="430">
                 <HouseMaster Legacy="True">EJM26039874978470404</HouseMaster>
                 <AssistantHouseMaster Legacy="True">GEC30293817158816004</AssistantHouseMaster>
                 <Name>Green</Name>

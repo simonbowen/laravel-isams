@@ -20,7 +20,7 @@ class StaffHydrator {
         /** @var Staff $entity */
         $entity = $this->entity->newInstance();
 
-        $entity->setId( (int) $data->attributes()->id);
+        $entity->setId( (int) $data->attributes()->Id);
         $entity->setEmail( (string) $data->SchoolEmailAddress);
         $entity->setName( (string) $data->FullName);
         $entity->setInitials( (string) $data->Initials);
