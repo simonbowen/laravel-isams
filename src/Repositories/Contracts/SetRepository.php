@@ -12,6 +12,8 @@ interface SetRepository {
 
     public function getPrimaryTeacher($id);
 
+    public function getSetCode($code);
+
     public function all();
 
 }
