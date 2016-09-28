@@ -52,6 +52,17 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
         return $this->hydrate($set[0]);
     }
 
+    public function getBySetCode($code)
+    {
+        $set = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[SetCode = '{$code}']");
+
+        if ( ! isset($set[0])) {
+            throw new SetNotFound("Set not found with Code {$code}");
+        }
+
+        return $this->hydrate($set[0]);
+    }
+
     /**
      * @param $id
      * @return Collection

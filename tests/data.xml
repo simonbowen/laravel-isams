@@ -79,8 +79,8 @@
                 <Author Legacy="True">SimonBowen65163237490240</Author>
                 <SetNumber>1</SetNumber>
                 <Block>A</Block>
-                <SetCode>SETCODE1</SetCode>
-                <Name>SETCODE1</Name>
+                <SetCode>SETCODE2</SetCode>
+                <Name>SETCODE2</Name>
                 <Teachers>
                     <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
                     <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
@@ -95,8 +95,8 @@
                 <Author Legacy="True">SimonBowen65163237490240</Author>
                 <SetNumber>1</SetNumber>
                 <Block>A</Block>
-                <SetCode>SETCODE1</SetCode>
-                <Name>SETCODE1</Name>
+                <SetCode>SETCODE3</SetCode>
+                <Name>SETCODE3</Name>
                 <Teachers>
                     <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
                     <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />

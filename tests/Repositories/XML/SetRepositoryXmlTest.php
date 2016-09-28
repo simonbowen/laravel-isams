@@ -65,4 +65,15 @@ class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($primaryTeacher->getId(), 1);
     }
 
+    public function test_get_by_set_code()
+    {
+        $code = 'SETCODE2';
+
+        $repository = $this->getRepository();
+        $set = $repository->getBySetCode($code);
+        $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Set', $set);
+        $this->assertEquals("2", $set->getId());
+        $this->assertEquals("SETCODE2", $set->getName());
+    }
+
 }
