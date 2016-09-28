@@ -35,6 +35,12 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
         return $this->hydrate($set);
     }
 
+    public function getBySetCode($code)
+    {
+        $set = $this->model->where('txtSetCode', $code)->first();
+        return $this->hydrate($set);
+    }
+
     public function getTeachers($id)
     {
         $set = $this->model->find($id);
