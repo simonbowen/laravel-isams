@@ -1,3 +1,4 @@
+<a href="https://styleci.io/repos/42831148"><img src="https://styleci.io/repos/42831148/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/simonbowen/laravel-isams"><img src="https://travis-ci.org/simonbowen/laravel-isams.svg?branch=master" /></a>
 
 # laravel-isams
