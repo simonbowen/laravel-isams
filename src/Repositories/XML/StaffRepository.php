@@ -3,16 +3,14 @@
 namespace SimonBowen\IsamsDrivers\Repositories\XML;
 
 use Illuminate\Support\Collection;
-
 use SimonBowen\IsamsDrivers\Repositories\Contracts\StaffRepository as StaffRepositoryContract;
-use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
-use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\StaffNotFound;
+use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator;
+use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\XML\Loader;
 
-
-class StaffRepository extends BaseRepository implements StaffRepositoryContract {
-
+class StaffRepository extends BaseRepository implements StaffRepositoryContract
+{
     protected $staffHydrator;
     protected $setHydrator;
 
@@ -20,8 +18,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
         Loader $loader,
         StaffHydrator $staffHydrator,
         SetHydrator $setHydrator
-    )
-    {
+    ) {
         $this->staffHydrator = $staffHydrator;
         $this->setHydrator = $setHydrator;
         parent::__construct($loader);
@@ -29,14 +26,16 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
 
     /**
      * @param $id
-     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
+     *
      * @throws StaffNotFound
+     *
+     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
      */
     public function getById($id)
     {
         $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$id}]");
 
-        if ( ! isset($staff[0])) {
+        if (!isset($staff[0])) {
             throw new StaffNotFound("Staff with ID {$id} not found");
         }
 
@@ -45,15 +44,17 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
 
     /**
      * @param $email
-     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
+     *
      * @throws StaffNotFound
+     *
+     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
      */
     public function getByEmail($email)
     {
         $email = strtolower($email);
         $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[php:functionString('strtolower', SchoolEmailAddress) = '{$email}']");
 
-        if ( ! isset($staff[0])) {
+        if (!isset($staff[0])) {
             throw new StaffNotFound("Staff with Email {$email} not found");
         }
 
@@ -65,12 +66,14 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
      */
     public function all()
     {
-        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/*");
+        $staff = $this->xml->xpath('/iSAMS/HRManager/CurrentStaff/*');
+
         return $this->hydrateAll($staff);
     }
 
     /**
      * @param $id
+     *
      * @return Collection
      */
     public function getSets($id)
@@ -87,25 +90,27 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
 
     /**
      * @param $members
+     *
      * @return Collection
      */
-    public function hydrateAll($members) {
+    public function hydrateAll($members)
+    {
         $collection = new Collection();
         foreach ($members as $member) {
             $entity = $this->hydrate($member);
             $collection->push($entity);
         }
+
         return $collection;
     }
 
     /**
      * @param \DOMNode $data
+     *
      * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
      */
     private function hydrate(\DOMNode $data)
     {
         return $this->staffHydrator->hydrate($data);
     }
-
-
 }

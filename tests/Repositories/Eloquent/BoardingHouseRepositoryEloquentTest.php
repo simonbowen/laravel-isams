@@ -2,8 +2,8 @@
 
 use Mockery as m;
 
-class BoardingHouseRepositoryEloquentTest extends BaseTest {
-
+class BoardingHouseRepositoryEloquentTest extends BaseTest
+{
     public function getRepository($model)
     {
         $entity = new \SimonBowen\IsamsDrivers\Entities\BoardingHouse();
@@ -19,7 +19,7 @@ class BoardingHouseRepositoryEloquentTest extends BaseTest {
 
         $boardingHouse->TblSchoolManagementHousesId = $faker->randomDigit;
         $boardingHouse->txtHouseName = $faker->word;
-        $boardingHouse->txtHouseCode = $faker->randomLetter . $faker->randomLetter;
+        $boardingHouse->txtHouseCode = $faker->randomLetter.$faker->randomLetter;
         $boardingHouse->txtHouseMaster = $faker->word;
         $boardingHouse->txtSex = $faker->randomElement(['M', 'F', 'U']);
 
@@ -29,18 +29,16 @@ class BoardingHouseRepositoryEloquentTest extends BaseTest {
     public function getData()
     {
         $models = new \Illuminate\Support\Collection();
-        for($x=0; $x<5; $x++) {
+        for ($x = 0; $x < 5; $x++) {
             $models->push($this->generateBoardingHouse());
         }
+
         return $models;
     }
 
     public function test_get_all_boarding_houses()
     {
-
     }
 
     // TODO: Work out a way to create tests that work when hydrating an object that uses a related model
-
-
 }

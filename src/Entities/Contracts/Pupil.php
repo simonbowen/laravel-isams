@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Entities\Contracts;
 
-interface Pupil {
-
+interface Pupil
+{
     public function getId();
 
     public function setId($id);
@@ -91,5 +91,4 @@ interface Pupil {
     public function getEnrolmentSchoolYear();
 
     public function setEnrolmentSchoolYear($enrolmentSchoolYear);
-
 }

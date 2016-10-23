@@ -3,13 +3,12 @@
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-
 use SimonBowen\IsamsDrivers\Models\Staff;
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\StaffRepository as StaffRepositoryContract;
+use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator;
 
-class StaffRepository extends BaseRepository implements StaffRepositoryContract {
-
+class StaffRepository extends BaseRepository implements StaffRepositoryContract
+{
     protected $staffHydrator;
 
     public function __construct(Staff $model, StaffHydrator $staffHydrator)
@@ -21,18 +20,21 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
     public function getById($id)
     {
         $member = $this->model->find($id);
+
         return $this->hydrate($member);
     }
 
     public function getByEmail($email)
     {
         $member = $this->model->where('SchoolEmailAddress', $email)->first();
+
         return $this->hydrate($member);
     }
 
     public function all()
     {
         $members = $this->model->all();
+
         return $this->hydrateAll($members);
     }
 
@@ -52,8 +54,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract 
         foreach ($members as $member) {
             $collection->push($this->hydrate($member));
         }
+
         return $collection;
     }
-
-
 }

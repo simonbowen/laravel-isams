@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Contracts;
 
-interface PupilRepository {
-
+interface PupilRepository
+{
     public function all();
 
     public function getById($id);
@@ -11,5 +11,4 @@ interface PupilRepository {
     public function getByEmail($email);
 
     public function getByBoardingHouse($house);
-
 }

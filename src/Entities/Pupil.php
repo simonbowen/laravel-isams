@@ -4,8 +4,8 @@ namespace SimonBowen\IsamsDrivers\Entities;
 
 use SimonBowen\IsamsDrivers\Entities\Contracts\Pupil as PupilContract;
 
-class Pupil implements PupilContract {
-
+class Pupil implements PupilContract
+{
     protected $id;
     protected $email;
     protected $name;
@@ -37,6 +37,7 @@ class Pupil implements PupilContract {
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -48,6 +49,7 @@ class Pupil implements PupilContract {
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -59,6 +61,7 @@ class Pupil implements PupilContract {
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -70,6 +73,7 @@ class Pupil implements PupilContract {
     public function setSchoolCode($schoolCode)
     {
         $this->schoolCode = $schoolCode;
+
         return $this;
     }
 
@@ -81,6 +85,7 @@ class Pupil implements PupilContract {
     public function setSchoolId($schoolId)
     {
         $this->schoolId = $schoolId;
+
         return $this;
     }
 
@@ -92,6 +97,7 @@ class Pupil implements PupilContract {
     public function setUserCode($userCode)
     {
         $this->userCode = $userCode;
+
         return $this;
     }
 
@@ -103,6 +109,7 @@ class Pupil implements PupilContract {
     public function setUserName($userName)
     {
         $this->userName = $userName;
+
         return $this;
     }
 
@@ -114,6 +121,7 @@ class Pupil implements PupilContract {
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -125,6 +133,7 @@ class Pupil implements PupilContract {
     public function setForename($forename)
     {
         $this->forename = $forename;
+
         return $this;
     }
 
@@ -136,6 +145,7 @@ class Pupil implements PupilContract {
     public function setSurname($surname)
     {
         $this->surname = $surname;
+
         return $this;
     }
 
@@ -147,6 +157,7 @@ class Pupil implements PupilContract {
     public function setMiddlename($middlename)
     {
         $this->middlename = $middlename;
+
         return $this;
     }
 
@@ -158,6 +169,7 @@ class Pupil implements PupilContract {
     public function setInitials($initials)
     {
         $this->initials = $initials;
+
         return $this;
     }
 
@@ -169,6 +181,7 @@ class Pupil implements PupilContract {
     public function setPreferredName($preferredName)
     {
         $this->preferredName = $preferredName;
+
         return $this;
     }
 
@@ -180,6 +193,7 @@ class Pupil implements PupilContract {
     public function setFullname($fullname)
     {
         $this->fullname = $fullname;
+
         return $this;
     }
 
@@ -191,6 +205,7 @@ class Pupil implements PupilContract {
     public function setGender($gender)
     {
         $this->gender = $gender;
+
         return $this;
     }
 
@@ -202,6 +217,7 @@ class Pupil implements PupilContract {
     public function setDOB($dob)
     {
         $this->dob = $dob;
+
         return $this;
     }
 
@@ -213,6 +229,7 @@ class Pupil implements PupilContract {
     public function setBoardingHouse($boardingHouse)
     {
         $this->boardingHouse = $boardingHouse;
+
         return $this;
     }
 
@@ -224,6 +241,7 @@ class Pupil implements PupilContract {
     public function setNCYear($NCYear)
     {
         $this->NCYear = $NCYear;
+
         return $this;
     }
 
@@ -235,6 +253,7 @@ class Pupil implements PupilContract {
     public function setPupilType($pupilType)
     {
         $this->pupilType = $pupilType;
+
         return $this;
     }
 
@@ -246,6 +265,7 @@ class Pupil implements PupilContract {
     public function setEnrolmentDate($enrolmentDate)
     {
         $this->enrolmentDate = $enrolmentDate;
+
         return $this;
     }
 
@@ -257,6 +277,7 @@ class Pupil implements PupilContract {
     public function setEnrolmentTerm($enrolmentTerm)
     {
         $this->enrolmentTerm = $enrolmentTerm;
+
         return $this;
     }
 
@@ -268,6 +289,7 @@ class Pupil implements PupilContract {
     public function setEnrolmentSchoolYear($enrolmentSchoolYear)
     {
         $this->enrolmentSchoolYear = $enrolmentSchoolYear;
+
         return $this;
     }
 
@@ -275,5 +297,4 @@ class Pupil implements PupilContract {
     {
         return new static();
     }
-
 }

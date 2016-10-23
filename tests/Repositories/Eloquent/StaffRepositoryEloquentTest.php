@@ -2,13 +2,14 @@
 
 use Mockery as m;
 
-class StaffRepositoryEloquentTest extends BaseTest {
-
+class StaffRepositoryEloquentTest extends BaseTest
+{
     protected function getRepository(\SimonBowen\IsamsDrivers\Models\Staff $model)
     {
         $entity = new \SimonBowen\IsamsDrivers\Entities\Staff();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator($entity);
         $repository = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\StaffRepository($model, $hydrator);
+
         return $repository;
     }
 
@@ -33,7 +34,7 @@ class StaffRepositoryEloquentTest extends BaseTest {
         $staff->NameInitials = implode(' ', [$firstname[0], $surname[0]]);
         $staff->PreferredName = implode(' ', [$firstname[0], $surname[0]]);
         $staff->Salutation = implode(' ', [$title, $surname]);
-        $staff->DOB = $faker->date('Y-m-d') . ' 00:00:00.000';
+        $staff->DOB = $faker->date('Y-m-d').' 00:00:00.000';
         $staff->Gender = $faker->randomElement(['M', 'F']);
 
         return $staff;
@@ -42,9 +43,10 @@ class StaffRepositoryEloquentTest extends BaseTest {
     protected function getData()
     {
         $models = new \Illuminate\Support\Collection();
-        for($x=0; $x < 5; $x++) {
+        for ($x = 0; $x < 5; $x++) {
             $models->push($this->generateStaff());
         }
+
         return $models;
     }
 
@@ -95,5 +97,4 @@ class StaffRepositoryEloquentTest extends BaseTest {
         $this->assertEquals($member->getKey(), $entity->getId());
         $this->assertEquals($member->Fullname, $entity->getName());
     }
-
 }

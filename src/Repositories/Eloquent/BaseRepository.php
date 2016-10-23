@@ -2,9 +2,7 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent;
 
-abstract class BaseRepository {
-
+abstract class BaseRepository
+{
     protected $model;
-
 }
-

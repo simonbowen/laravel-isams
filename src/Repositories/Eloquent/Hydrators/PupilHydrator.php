@@ -2,11 +2,11 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators;
 
-use SimonBowen\IsamsDrivers\Models\Pupil;
 use SimonBowen\IsamsDrivers\Entities\Contracts\Pupil as PupilEntity;
+use SimonBowen\IsamsDrivers\Models\Pupil;
 
-class PupilHydrator {
-
+class PupilHydrator
+{
     protected $entity;
 
     public function __construct(PupilEntity $entity)
@@ -43,5 +43,4 @@ class PupilHydrator {
 
         return $entity;
     }
-
 }

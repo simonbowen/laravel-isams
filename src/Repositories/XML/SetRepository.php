@@ -3,23 +3,22 @@
 namespace SimonBowen\IsamsDrivers\Repositories\XML;
 
 use Illuminate\Support\Collection;
-
 use SimonBowen\IsamsDrivers\Repositories\Contracts\SetRepository as SetRepositoryContract;
-use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
+use SimonBowen\IsamsDrivers\Repositories\Exceptions\SetNotFound;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator;
 use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\SetHydrator;
-use SimonBowen\IsamsDrivers\Repositories\Exceptions\SetNotFound;
+use SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\XML\Loader;
 
-class SetRepository extends BaseRepository implements SetRepositoryContract  {
-
+class SetRepository extends BaseRepository implements SetRepositoryContract
+{
     protected $setHydrator;
     protected $staffHydrator;
     protected $pupilHydrator;
 
     /**
-     * @param Loader $loader
-     * @param SetHydrator $setHydrator
+     * @param Loader        $loader
+     * @param SetHydrator   $setHydrator
      * @param StaffHydrator $staffHydrator
      * @param PupilHydrator $pupilHydrator
      */
@@ -28,8 +27,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
         SetHydrator $setHydrator,
         StaffHydrator $staffHydrator,
         PupilHydrator $pupilHydrator
-    )
-    {
+    ) {
         $this->setHydrator = $setHydrator;
         $this->staffHydrator = $staffHydrator;
         $this->pupilHydrator = $pupilHydrator;
@@ -38,14 +36,16 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
 
     /**
      * @param $id
-     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Set
+     *
      * @throws SetNotFound
+     *
+     * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Set
      */
     public function getById($id)
     {
         $set = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[@Id={$id}]");
 
-        if ( ! isset($set[0])) {
+        if (!isset($set[0])) {
             throw new SetNotFound("Set not found with ID {$id}");
         }
 
@@ -56,7 +56,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
     {
         $set = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[SetCode = '{$code}']");
 
-        if ( ! isset($set[0])) {
+        if (!isset($set[0])) {
             throw new SetNotFound("Set not found with Code {$code}");
         }
 
@@ -65,8 +65,10 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
 
     /**
      * @param $id
-     * @return Collection
+     *
      * @throws SetNotFound
+     *
+     * @return Collection
      */
     public function getTeachers($id)
     {
@@ -83,6 +85,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
 
     /**
      * @param $id
+     *
      * @return Collection
      */
     public function getPupils($id)
@@ -102,6 +105,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
 
     /**
      * @param $id
+     *
      * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Staff
      */
     public function getPrimaryTeacher($id)
@@ -110,6 +114,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
         $primary = simplexml_import_dom($primary);
 
         $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$primary->attributes()->StaffId}]");
+
         return $this->staffHydrator->hydrate($staff[0]);
     }
 
@@ -119,28 +124,32 @@ class SetRepository extends BaseRepository implements SetRepositoryContract  {
     public function all()
     {
         $sets = $this->xml->xpath('/iSAMS/TeachingManager/Sets/Set');
+
         return $this->hydrateAll($sets);
     }
 
     /**
      * @param $sets
+     *
      * @return Collection
      */
-    private function hydrateAll($sets) {
+    private function hydrateAll($sets)
+    {
         $collection = new Collection();
         foreach ($sets as $set) {
             $collection->push($this->hydrate($set));
         }
+
         return $collection;
     }
 
     /**
      * @param $set
+     *
      * @return \SimonBowen\IsamsDrivers\Entities\Contracts\Set
      */
     private function hydrate($set)
     {
         return $this->setHydrator->hydrate($set);
     }
-
 }

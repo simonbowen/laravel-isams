@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Models;
 
-class BoardingHouse extends BaseModel {
-
+class BoardingHouse extends BaseModel
+{
     protected $table = 'TblSchoolManagementHouses';
 
     public function housemaster()
@@ -20,5 +20,4 @@ class BoardingHouse extends BaseModel {
     {
         return $this->housemaster;
     }
-
 }

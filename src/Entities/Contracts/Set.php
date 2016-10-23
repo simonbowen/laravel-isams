@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Entities\Contracts;
 
-interface Set {
-
+interface Set
+{
     public function getId();
 
     public function setId($id);
@@ -19,5 +19,4 @@ interface Set {
     public function getTeachers();
 
     public function addTeacher($teacher);
-
 }

@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Contracts;
 
-interface SetRepository {
-
+interface SetRepository
+{
     public function getById($id);
 
     public function getTeachers($id);
@@ -15,5 +15,4 @@ interface SetRepository {
     public function getBySetCode($code);
 
     public function all();
-
 }

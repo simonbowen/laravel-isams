@@ -2,8 +2,8 @@
 
 use Mockery as m;
 
-class PupilRepositoryXmlTest extends BaseTest {
-
+class PupilRepositoryXmlTest extends BaseTest
+{
     public function getRepository()
     {
         $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
@@ -15,6 +15,7 @@ class PupilRepositoryXmlTest extends BaseTest {
         $entity = new \SimonBowen\IsamsDrivers\Entities\Pupil();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\XML\Hydrators\PupilHydrator($entity);
         $pupilRepository = new \SimonBowen\IsamsDrivers\Repositories\XML\PupilRepository($loader, $hydrator);
+
         return $pupilRepository;
     }
 
@@ -50,7 +51,7 @@ class PupilRepositoryXmlTest extends BaseTest {
         $this->assertEquals($first->getEnrolmentTerm(), 'EnrolmentTerm');
         $this->assertEquals($first->getEnrolmentSchoolYear(), '2009');
 
-        /** @var \SimonBowen\IsamsDrivers\Entities\Contracts\Pupil $first */
+        /* @var \SimonBowen\IsamsDrivers\Entities\Contracts\Pupil $first */
         $last = $members->last();
         $this->assertEquals($last->getId(), 2);
         $this->assertEquals($last->getName(), 'Reginald Kray');
@@ -73,7 +74,6 @@ class PupilRepositoryXmlTest extends BaseTest {
         $this->assertEquals($last->getEnrolmentDate(), '2015-09-07T00:00:00');
         $this->assertEquals($last->getEnrolmentTerm(), 'EnrolmentTerm');
         $this->assertEquals($last->getEnrolmentSchoolYear(), '2009');
-
     }
 
     public function test_get_pupil_by_id()
@@ -193,7 +193,6 @@ class PupilRepositoryXmlTest extends BaseTest {
         $this->assertEquals($pupil->getEnrolmentDate(), '2015-09-07T00:00:00');
         $this->assertEquals($pupil->getEnrolmentTerm(), 'EnrolmentTerm');
         $this->assertEquals($pupil->getEnrolmentSchoolYear(), '2009');
-
     }
 
     /**
@@ -215,7 +214,4 @@ class PupilRepositoryXmlTest extends BaseTest {
         $repository = $this->getRepository();
         $pupil = $repository->getByEmail('steve.jobs@apple.com');
     }
-
-
-
 }

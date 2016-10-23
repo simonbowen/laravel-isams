@@ -3,18 +3,17 @@
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-
+use SimonBowen\IsamsDrivers\Models\Pupil;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\PupilRepository as PupilRepositoryContract;
 use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\PupilHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound;
-use SimonBowen\IsamsDrivers\Models\Pupil;
 
-class PupilRepository implements PupilRepositoryContract {
-
+class PupilRepository implements PupilRepositoryContract
+{
     protected $pupilHydrator;
 
     /**
-     * @param Pupil $model
+     * @param Pupil         $model
      * @param PupilHydrator $pupilHydrator
      */
     public function __construct(Pupil $model, PupilHydrator $pupilHydrator)
@@ -29,19 +28,22 @@ class PupilRepository implements PupilRepositoryContract {
     public function all()
     {
         $pupils = $this->model->all();
+
         return $this->hydrateAll($pupils);
     }
 
     /**
      * @param $id
-     * @return static
+     *
      * @throws PupilNotFound
+     *
+     * @return static
      */
     public function getById($id)
     {
         $pupil = $this->model->find($id);
 
-        if ( ! $pupil) {
+        if (!$pupil) {
             throw new PupilNotFound();
         }
 
@@ -50,14 +52,16 @@ class PupilRepository implements PupilRepositoryContract {
 
     /**
      * @param $email
-     * @return static
+     *
      * @throws PupilNotFound
+     *
+     * @return static
      */
     public function getByEmail($email)
     {
         $pupil = $this->model->where('txtEmailAddress', $email)->first();
 
-        if ( ! $pupil) {
+        if (!$pupil) {
             throw new PupilNotFound();
         }
 
@@ -67,11 +71,13 @@ class PupilRepository implements PupilRepositoryContract {
     public function getByBoardingHouse($house)
     {
         $pupils = $this->model->where('txtBoardingHouse', $house)->get();
+
         return $this->hydrateAll($pupils);
     }
 
     /**
      * @param Pupil $model
+     *
      * @return static
      */
     private function hydrate(Pupil $model)
@@ -81,6 +87,7 @@ class PupilRepository implements PupilRepositoryContract {
 
     /**
      * @param $pupils
+     *
      * @return Collection
      */
     private function hydrateAll($pupils)
@@ -89,7 +96,7 @@ class PupilRepository implements PupilRepositoryContract {
         foreach ($pupils as $pupil) {
             $collection->push($this->hydrate($pupil));
         }
+
         return $collection;
     }
-
 }
