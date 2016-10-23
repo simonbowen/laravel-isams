@@ -2,8 +2,8 @@
 
 use Mockery as m;
 
-class StaffRepositoryTest extends BaseTest {
-
+class StaffRepositoryTest extends BaseTest
+{
     public function getRepository()
     {
         $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
@@ -77,5 +77,4 @@ class StaffRepositoryTest extends BaseTest {
         $this->assertEquals(count($sets), 3);
         $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Set', $sets[0]);
     }
-
 }

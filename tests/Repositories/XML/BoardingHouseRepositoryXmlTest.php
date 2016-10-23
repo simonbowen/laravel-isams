@@ -1,11 +1,10 @@
 <?php
 
 use Mockery as m;
-
 use SimonBowen\IsamsDrivers\Repositories\XML\BoardingHouseRepository;
 
-class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase {
-
+class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase
+{
     public function getRepository()
     {
         $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
@@ -52,7 +51,4 @@ class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase {
         $repository = $this->getRepository();
         $house = $repository->getById(1000);
     }
-
-
-
 }

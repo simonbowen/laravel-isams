@@ -3,15 +3,14 @@
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-
 use SimonBowen\IsamsDrivers\Models\Set;
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\SetHydrator;
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\PupilHydrator;
-use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\SetRepository as SetRepositoryContract;
+use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\PupilHydrator;
+use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\SetHydrator;
+use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator;
 
-class SetRepository extends BaseRepository implements SetRepositoryContract {
-
+class SetRepository extends BaseRepository implements SetRepositoryContract
+{
     protected $setHydrator;
     protected $staffHydrator;
     protected $pupilHydrator;
@@ -21,8 +20,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
         SetHydrator $setHydrator,
         StaffHydrator $staffHydrator,
         PupilHydrator $pupilHydrator
-    )
-    {
+    ) {
         $this->model = $model;
         $this->setHydrator = $setHydrator;
         $this->staffHydrator = $staffHydrator;
@@ -32,12 +30,14 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
     public function getById($id)
     {
         $set = $this->model->find($id);
+
         return $this->hydrate($set);
     }
 
     public function getBySetCode($code)
     {
         $set = $this->model->where('txtSetCode', $code)->first();
+
         return $this->hydrate($set);
     }
 
@@ -72,12 +72,14 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
     public function getPrimaryTeacher($id)
     {
         $primaryTeacher = $this->model->find($id)->primary_teacher;
+
         return $this->staffHydrator->hydrate($primaryTeacher);
     }
 
     public function all()
     {
         $sets = $this->model->all();
+
         return $this->hydrateAll($sets);
     }
 
@@ -92,8 +94,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract {
         foreach ($sets as $set) {
             $collection->push($this->hydrate($set));
         }
+
         return $collection;
     }
-
-
 }

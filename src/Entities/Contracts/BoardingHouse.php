@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Entities\Contracts;
 
-interface BoardingHouse {
-
+interface BoardingHouse
+{
     public function getName();
 
     public function setName($name);
@@ -23,6 +23,4 @@ interface BoardingHouse {
     public function getCode();
 
     public function setCode($code);
-
-
 }

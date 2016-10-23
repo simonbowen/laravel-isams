@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Contracts;
 
-interface StaffRepository {
-
+interface StaffRepository
+{
     public function getById($id);
 
     public function getByEmail($email);
@@ -11,5 +11,4 @@ interface StaffRepository {
     public function all();
 
     public function getSets($id);
-
 }

@@ -1,7 +1,9 @@
-<?php namespace SimonBowen\IsamsDrivers\XML;
+<?php
 
-class Manager {
+namespace SimonBowen\IsamsDrivers\XML;
 
+class Manager
+{
     protected $domXpath;
 
     public function __construct($xml)
@@ -10,7 +12,7 @@ class Manager {
         $dom->loadXml($xml);
 
         $this->domXpath = new \DOMXPath($dom);
-        $this->domXpath->registerNamespace("php", "http://php.net/xpath");
+        $this->domXpath->registerNamespace('php', 'http://php.net/xpath');
         $this->domXpath->registerPhpFunctions('strtolower');
     }
 
@@ -18,5 +20,4 @@ class Manager {
     {
         return iterator_to_array($this->domXpath->query($path));
     }
-
 }

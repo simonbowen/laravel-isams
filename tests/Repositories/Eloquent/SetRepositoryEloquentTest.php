@@ -2,12 +2,12 @@
 
 use Mockery as m;
 
-class SetRepositoryEloquentTest extends BaseTest {
-
+class SetRepositoryEloquentTest extends BaseTest
+{
     protected function generateSet()
     {
         $faker = Faker\Factory::create();
-        $set = new \SimonBowen\IsamsDrivers\Models\Set;
+        $set = new \SimonBowen\IsamsDrivers\Models\Set();
 
         $setName = $faker->word;
 
@@ -26,15 +26,17 @@ class SetRepositoryEloquentTest extends BaseTest {
         $staffHydrator = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator(new \SimonBowen\IsamsDrivers\Entities\Staff());
         $pupilHydrator = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\PupilHydrator(new \SimonBowen\IsamsDrivers\Entities\Pupil());
         $repository = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\SetRepository($model, $hydrator, $staffHydrator, $pupilHydrator);
+
         return $repository;
     }
 
     public function getData()
     {
         $models = new \Illuminate\Support\Collection();
-        for($x=0; $x < 5; $x++) {
+        for ($x = 0; $x < 5; $x++) {
             $models->push($this->generateSet());
         }
+
         return $models;
     }
 
@@ -63,6 +65,4 @@ class SetRepositoryEloquentTest extends BaseTest {
         $this->assertInstanceOf('SimonBowen\IsamsDrivers\Entities\Set', $entity);
         $this->assertEquals($set->getKey(), $entity->getId());
     }
-
-
 }

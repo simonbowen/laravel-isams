@@ -3,22 +3,20 @@
 namespace SimonBowen\IsamsDrivers\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-
 use SimonBowen\IsamsDrivers\Models\BoardingHouse;
 use SimonBowen\IsamsDrivers\Repositories\Contracts\BoardingHouseRepository as BoardingHouseRepositoryContract;
 use SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\BoardingHouseHydrator;
 use SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound;
 
-class BoardingHouseRepository implements BoardingHouseRepositoryContract {
-
+class BoardingHouseRepository implements BoardingHouseRepositoryContract
+{
     protected $model;
     protected $hydrator;
 
     public function __construct(
         BoardingHouse $model,
         BoardingHouseHydrator $hydrator
-    )
-    {
+    ) {
         $this->model = $model;
         $this->hydrator = $hydrator;
     }
@@ -30,9 +28,10 @@ class BoardingHouseRepository implements BoardingHouseRepositoryContract {
 
     public function getById($id)
     {
-        if ( ! $house = $this->model->find($id)) {
-            throw new BoardingHouseNotFound;
+        if (!$house = $this->model->find($id)) {
+            throw new BoardingHouseNotFound();
         }
+
         return $this->hydrate($house);
     }
 
@@ -45,8 +44,8 @@ class BoardingHouseRepository implements BoardingHouseRepositoryContract {
             ->where('TblStaff.TblStaffID', '=', $id)
             ->get();
 
-        if ( ! $house) {
-            throw new BoardingHouseNotFound;
+        if (!$house) {
+            throw new BoardingHouseNotFound();
         }
 
         return $this->hydrate($house);
@@ -63,8 +62,7 @@ class BoardingHouseRepository implements BoardingHouseRepositoryContract {
         foreach ($houses as $house) {
             $collection->push($this->hydrate($house));
         }
+
         return $collection;
     }
-
-
 }

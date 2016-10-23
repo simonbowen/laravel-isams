@@ -4,8 +4,8 @@ namespace SimonBowen\IsamsDrivers\Entities;
 
 use SimonBowen\IsamsDrivers\Entities\Contracts\Staff as StaffContract;
 
-class Staff implements StaffContract {
-
+class Staff implements StaffContract
+{
     protected $id;
     protected $name;
     protected $email;
@@ -29,6 +29,7 @@ class Staff implements StaffContract {
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -40,6 +41,7 @@ class Staff implements StaffContract {
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -51,6 +53,7 @@ class Staff implements StaffContract {
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -62,6 +65,7 @@ class Staff implements StaffContract {
     public function setInitials($initials)
     {
         $this->initials = $initials;
+
         return $this;
     }
 
@@ -73,6 +77,7 @@ class Staff implements StaffContract {
     public function setUserCode($userCode)
     {
         $this->userCode = $userCode;
+
         return $this;
     }
 
@@ -84,6 +89,7 @@ class Staff implements StaffContract {
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -95,6 +101,7 @@ class Staff implements StaffContract {
     public function setForename($forename)
     {
         $this->forename = $forename;
+
         return $this;
     }
 
@@ -106,6 +113,7 @@ class Staff implements StaffContract {
     public function setMiddleNames($middleNames)
     {
         $this->middleNames = $middleNames;
+
         return $this;
     }
 
@@ -117,6 +125,7 @@ class Staff implements StaffContract {
     public function setSurname($surname)
     {
         $this->surname = $surname;
+
         return $this;
     }
 
@@ -128,6 +137,7 @@ class Staff implements StaffContract {
     public function setNameInitials($nameInitials)
     {
         $this->nameInitials = $nameInitials;
+
         return $this;
     }
 
@@ -139,6 +149,7 @@ class Staff implements StaffContract {
     public function setPreferredName($preferredName)
     {
         $this->preferredName = $preferredName;
+
         return $this;
     }
 
@@ -150,6 +161,7 @@ class Staff implements StaffContract {
     public function setSalutation($salutation)
     {
         $this->salutation = $salutation;
+
         return $this;
     }
 
@@ -161,6 +173,7 @@ class Staff implements StaffContract {
     public function setDOB($dob)
     {
         $this->dob = $dob;
+
         return $this;
     }
 
@@ -172,6 +185,7 @@ class Staff implements StaffContract {
     public function setGender($gender)
     {
         $this->gender = $gender;
+
         return $this;
     }
 
@@ -179,6 +193,4 @@ class Staff implements StaffContract {
     {
         return new static();
     }
-
-
 }

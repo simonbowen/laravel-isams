@@ -5,8 +5,8 @@ namespace SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators;
 use SimonBowen\IsamsDrivers\Entities\Staff as StaffEntity;
 use SimonBowen\IsamsDrivers\Models\Staff;
 
-class StaffHydrator {
-
+class StaffHydrator
+{
     protected $entity;
 
     public function __construct(StaffEntity $entity)
@@ -36,5 +36,4 @@ class StaffHydrator {
 
         return $entity;
     }
-
 }

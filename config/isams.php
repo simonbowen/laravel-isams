@@ -2,8 +2,8 @@
 
 return [
     'driver' => 'xml',
-    'xml' => [
-        'url' => '',
+    'xml'    => [
+        'url'   => '',
         'cache' => null,
     ],
     'db' => [

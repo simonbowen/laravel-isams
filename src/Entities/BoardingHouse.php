@@ -4,8 +4,8 @@ namespace SimonBowen\IsamsDrivers\Entities;
 
 use SimonBowen\IsamsDrivers\Entities\Contracts\BoardingHouse as BoardingHouseContract;
 
-class BoardingHouse implements BoardingHouseContract {
-
+class BoardingHouse implements BoardingHouseContract
+{
     protected $name;
     protected $id;
     protected $housemasterId;
@@ -20,6 +20,7 @@ class BoardingHouse implements BoardingHouseContract {
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -31,6 +32,7 @@ class BoardingHouse implements BoardingHouseContract {
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -42,6 +44,7 @@ class BoardingHouse implements BoardingHouseContract {
     public function setHousemasterId($id)
     {
         $this->housemasterId = $id;
+
         return $this;
     }
 
@@ -53,6 +56,7 @@ class BoardingHouse implements BoardingHouseContract {
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -64,6 +68,7 @@ class BoardingHouse implements BoardingHouseContract {
     public function setSex($sex)
     {
         $this->sex = $sex;
+
         return $this;
     }
 
@@ -71,5 +76,4 @@ class BoardingHouse implements BoardingHouseContract {
     {
         return new static();
     }
-
 }

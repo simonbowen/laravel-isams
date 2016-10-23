@@ -5,8 +5,8 @@ namespace SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators;
 use SimonBowen\IsamsDrivers\Entities\Contracts\Set as SetEntity;
 use SimonBowen\IsamsDrivers\Models\Set;
 
-class SetHydrator {
-
+class SetHydrator
+{
     protected $entity;
 
     public function __construct(SetEntity $entity)
@@ -28,5 +28,4 @@ class SetHydrator {
 
         return $entity;
     }
-
 }

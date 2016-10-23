@@ -4,8 +4,8 @@ namespace SimonBowen\IsamsDrivers\Entities;
 
 use SimonBowen\IsamsDrivers\Entities\Contracts\Set as SetContract;
 
-class Set implements SetContract {
-
+class Set implements SetContract
+{
     protected $id;
     protected $setCode;
     protected $name;
@@ -20,6 +20,7 @@ class Set implements SetContract {
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -31,6 +32,7 @@ class Set implements SetContract {
     public function setSetCode($setCode)
     {
         $this->setCode = $setCode;
+
         return $this;
     }
 
@@ -42,6 +44,7 @@ class Set implements SetContract {
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -53,6 +56,7 @@ class Set implements SetContract {
     public function addTeacher($teacher)
     {
         $this->teachers[] = $teacher;
+
         return $this;
     }
 
@@ -64,6 +68,7 @@ class Set implements SetContract {
     public function setYear($year)
     {
         $this->year = $year;
+
         return $this;
     }
 
@@ -71,6 +76,4 @@ class Set implements SetContract {
     {
         return new static();
     }
-
-
 }

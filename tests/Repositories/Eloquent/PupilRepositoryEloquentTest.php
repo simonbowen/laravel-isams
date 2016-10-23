@@ -2,8 +2,8 @@
 
 use Mockery as m;
 
-class PupilRepositoryEloquentTest extends BaseTest {
-
+class PupilRepositoryEloquentTest extends BaseTest
+{
     protected function generatePupil()
     {
         $faker = Faker\Factory::create();
@@ -17,20 +17,20 @@ class PupilRepositoryEloquentTest extends BaseTest {
         $pupil->txtName = implode(' ', [$forename, $surname]);
         $pupil->txtSchoolCode = $faker->numberBetween(10000, 99999);
         $pupil->txtSchoolId = $faker->numberBetween(100000000, 9999999999);
-        $pupil->txtUserCode = implode(' ', [$forename, $surname]) . $faker->numberBetween(100000000, 9999999999);
+        $pupil->txtUserCode = implode(' ', [$forename, $surname]).$faker->numberBetween(100000000, 9999999999);
         $pupil->txtUsername = $faker->word;
         $pupil->txtTitle = $faker->title;
         $pupil->txtForename = $forename;
         $pupil->txtSurname = $surname;
         $pupil->txtMiddleNames = $faker->firstName;
-        $pupil->txtInitials = $forename[0] . ' ' . $surname[0];
+        $pupil->txtInitials = $forename[0].' '.$surname[0];
         $pupil->txtPreName = $forename;
         $pupil->txtFullname = implode(' ', [$forename, $surname]);
         $pupil->txtGender = $faker->randomElement(['M', 'F']);
-        $pupil->txtDOB = $faker->date() . ' 00:00:00.000';
+        $pupil->txtDOB = $faker->date().' 00:00:00.000';
         $pupil->txtBoardingHouse = $faker->word;
         $pupil->intNCYear = 1;
-        $pupil->txtEnrolmentDate = $faker->date() . ' 00:00:00';
+        $pupil->txtEnrolmentDate = $faker->date().' 00:00:00';
         $pupil->txtEnrolmentTerm = $faker->word;
         $pupil->intEnrolmentSchoolYear = $faker->year;
 
@@ -40,9 +40,10 @@ class PupilRepositoryEloquentTest extends BaseTest {
     protected function getData()
     {
         $models = new \Illuminate\Support\Collection();
-        for($x=0; $x<5; $x++) {
+        for ($x = 0; $x < 5; $x++) {
             $models->push($this->generatePupil());
         }
+
         return $models;
     }
 
@@ -50,6 +51,7 @@ class PupilRepositoryEloquentTest extends BaseTest {
     {
         $entity = new \SimonBowen\IsamsDrivers\Entities\Pupil();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\PupilHydrator($entity);
+
         return new \SimonBowen\IsamsDrivers\Repositories\Eloquent\PupilRepository($model, $hydrator);
     }
 
@@ -65,7 +67,6 @@ class PupilRepositoryEloquentTest extends BaseTest {
 
     public function test_get_by_id()
     {
-
         $pupil = $this->generatePupil();
 
         $model = m::mock(\SimonBowen\IsamsDrivers\Models\Pupil::class);
@@ -102,5 +103,4 @@ class PupilRepositoryEloquentTest extends BaseTest {
         $this->assertEquals($pupil->getKey(), $entity->getId());
         $this->assertEquals($pupil->txtFullname, $entity->getFullname());
     }
-
 }

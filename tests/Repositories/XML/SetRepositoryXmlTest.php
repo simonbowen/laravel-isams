@@ -2,8 +2,8 @@
 
 use Mockery as m;
 
-class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase {
-
+class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase
+{
     public function getRepository()
     {
         $manager = new \SimonBowen\IsamsDrivers\XML\Manager(file_get_contents('./tests/data.xml'));
@@ -72,8 +72,7 @@ class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase {
         $repository = $this->getRepository();
         $set = $repository->getBySetCode($code);
         $this->assertInstanceOf('\SimonBowen\IsamsDrivers\Entities\Contracts\Set', $set);
-        $this->assertEquals("2", $set->getId());
-        $this->assertEquals("SETCODE2", $set->getName());
+        $this->assertEquals('2', $set->getId());
+        $this->assertEquals('SETCODE2', $set->getName());
     }
-
 }

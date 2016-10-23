@@ -2,8 +2,8 @@
 
 namespace SimonBowen\IsamsDrivers\Entities\Contracts;
 
-interface Staff {
-
+interface Staff
+{
     public function getId();
 
     public function setId($id);
@@ -59,5 +59,4 @@ interface Staff {
     public function getGender();
 
     public function setGender($gender);
-
 }

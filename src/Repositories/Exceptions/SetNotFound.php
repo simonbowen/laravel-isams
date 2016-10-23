@@ -2,4 +2,6 @@
 
 namespace SimonBowen\IsamsDrivers\Repositories\Exceptions;
 
-class SetNotFound extends \Exception {}
+class SetNotFound extends \Exception
+{
+}
