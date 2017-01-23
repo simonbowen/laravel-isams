@@ -33,7 +33,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract
      */
     public function getById($id)
     {
-        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$id}]");
+        $staff = $this->xml->xpath("/iSAMS/CurrentStaff/StaffMember[@Id={$id}]");
 
         if (!isset($staff[0])) {
             throw new StaffNotFound("Staff with ID {$id} not found");
@@ -52,7 +52,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract
     public function getByEmail($email)
     {
         $email = strtolower($email);
-        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[php:functionString('strtolower', SchoolEmailAddress) = '{$email}']");
+        $staff = $this->xml->xpath("/iSAMS/CurrentStaff/StaffMember[php:functionString('strtolower', SchoolEmailAddress) = '{$email}']");
 
         if (!isset($staff[0])) {
             throw new StaffNotFound("Staff with Email {$email} not found");
@@ -66,7 +66,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract
      */
     public function all()
     {
-        $staff = $this->xml->xpath('/iSAMS/HRManager/CurrentStaff/*');
+        $staff = $this->xml->xpath('/iSAMS/CurrentStaff/*');
 
         return $this->hydrateAll($staff);
     }
@@ -78,7 +78,7 @@ class StaffRepository extends BaseRepository implements StaffRepositoryContract
      */
     public function getSets($id)
     {
-        $sets = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[Teachers/Teacher[@StaffId={$id}]]");
+        $sets = $this->xml->xpath("/iSAMS/Sets/Set[Teachers/Teacher[@StaffId={$id}]]");
         $teacherSets = new Collection();
 
         foreach ($sets as $set) {
