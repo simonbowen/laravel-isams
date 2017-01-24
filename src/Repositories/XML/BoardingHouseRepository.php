@@ -20,14 +20,14 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
 
     public function all()
     {
-        $houses = $this->xml->xpath('//iSAMS/BoardingHouses/*');
+        $houses = $this->xml->xpath('//iSAMS/SchoolManager/BoardingHouses/*');
 
         return $this->hydrateAll($houses);
     }
 
     public function getById($id)
     {
-        $house = $this->xml->xpath("//iSAMS/BoardingHouses/House[@Id={$id}]");
+        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@Id={$id}]");
 
         if (!isset($house[0])) {
             throw new BoardingHouseNotFound();
@@ -38,7 +38,7 @@ class BoardingHouseRepository extends BaseRepository implements BoardingHouseRep
 
     public function getByHousemasterId($id)
     {
-        $house = $this->xml->xpath("//iSAMS/BoardingHouses/House[@HouseMasterId={$id}]");
+        $house = $this->xml->xpath("//iSAMS/SchoolManager/BoardingHouses/House[@HouseMasterId={$id}]");
 
         if (!isset($house[0])) {
             throw new BoardingHouseNotFound();

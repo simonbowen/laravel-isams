@@ -23,7 +23,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract
      */
     public function all()
     {
-        $pupils = $this->xml->xpath('/iSAMS/CurrentPupils/*');
+        $pupils = $this->xml->xpath('/iSAMS/PupilManager/CurrentPupils/*');
 
         return $this->hydrateAll($pupils);
     }
@@ -37,7 +37,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract
      */
     public function getById($id)
     {
-        $pupil = $this->xml->xpath("/iSAMS/CurrentPupils/Pupil[@Id={$id}]");
+        $pupil = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[@Id={$id}]");
 
         if (!isset($pupil[0])) {
             throw new PupilNotFound("Pupil not found with ID {$id}");
@@ -56,7 +56,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract
     public function getByEmail($email)
     {
         $email = strtolower($email);
-        $pupil = $this->xml->xpath('/iSAMS/CurrentPupils/Pupil[php:functionString("strtolower", EmailAddress) = "'.$email.'"]');
+        $pupil = $this->xml->xpath('/iSAMS/PupilManager/CurrentPupils/Pupil[php:functionString("strtolower", EmailAddress) = "'.$email.'"]');
 
         if (!isset($pupil[0])) {
             throw new PupilNotFound("Pupil not found with Email {$email}");
@@ -72,7 +72,7 @@ class PupilRepository extends BaseRepository implements PupilRepositoryContract
      */
     public function getByBoardingHouse($house)
     {
-        $pupils = $this->xml->xpath("/iSAMS/CurrentPupils/Pupil[BoardingHouse = '{$house}']");
+        $pupils = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[BoardingHouse = '{$house}']");
 
         return $this->hydrateAll($pupils);
     }

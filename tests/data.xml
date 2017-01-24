@@ -1,199 +1,207 @@
 <iSAMS>
-    <CurrentStaff>
-        <StaffMember Id="1">
-            <PreviousMISId>1000</PreviousMISId>
-            <Initials>SEB</Initials>
-            <UserCode>SimonBowen65163237490240</UserCode>
-            <UserName>SBOWEN</UserName>
-            <Title>Mr</Title>
-            <Forename>Simon</Forename>
-            <MiddleNames>Edward</MiddleNames>
-            <Surname>Bowen</Surname>
-            <FullName>Simon Bowen</FullName>
-            <NameInitials>S B</NameInitials>
-            <PreferredName>Simon</PreferredName>
-            <Salutation>Mr Bowen</Salutation>
-            <DOB>1968-05-12T00:00:00</DOB>
-            <Gender>M</Gender>
-            <SchoolEmailAddress>sbowen@isams.com</SchoolEmailAddress>
-        </StaffMember>
-        <StaffMember Id="2">
-            <PreviousMISId>1001</PreviousMISId>
-            <Initials>AD</Initials>
-            <UserCode>RobertSmith29333722646956807</UserCode>
-            <UserName>BSMITH</UserName>
-            <Title>Mr</Title>
-            <Forename>Robert</Forename>
-            <MiddleNames />
-            <Surname>Smith</Surname>
-            <FullName>Robert Smith</FullName>
-            <NameInitials>R S</NameInitials>
-            <PreferredName>Bob</PreferredName>
-            <Salutation>Mr Smith</Salutation>
-            <DOB>2014-11-21T00:00:00</DOB>
-            <Gender>M</Gender>
-            <SchoolEmailAddress>rsmith@isams.com</SchoolEmailAddress>
-        </StaffMember>
-        <StaffMember Id="3">
-            <PreviousMISId>1003</PreviousMISId>
-            <Initials>DA</Initials>
-            <UserCode>DamienAlborn94132280653568</UserCode>
-            <UserName>DALBORN</UserName>
-            <Title>Mr</Title>
-            <Forename>Damien</Forename>
-            <MiddleNames />
-            <Surname>Alborn</Surname>
-            <FullName>Damien Alborn</FullName>
-            <NameInitials>D A</NameInitials>
-            <PreferredName>Damien</PreferredName>
-            <Salutation>Mr Alborn</Salutation>
-            <DOB>1976-02-13T00:00:00</DOB>
-            <Gender>M</Gender>
-            <SchoolEmailAddress>dalborn@isams.com</SchoolEmailAddress>
-        </StaffMember>
-    </CurrentStaff>
-    <Sets>
-        <Set Id="1" SubjectId="1" YearId="7" AuthorId="1">
-            <SubjectId Legacy="True">1</SubjectId>
-            <YearId Legacy="True">7</YearId>
-            <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
-            <Author Legacy="True">SimonBowen65163237490240</Author>
-            <SetNumber>1</SetNumber>
-            <Block>A</Block>
-            <SetCode>SETCODE1</SetCode>
-            <Name>SETCODE1</Name>
-            <Teachers>
-                <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
-                <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
-            </Teachers>
-            <Description />
-            <LastUpdated>2015-09-11T14:09:09</LastUpdated>
-        </Set>
-        <Set Id="2" SubjectId="1" YearId="7" AuthorId="1">
-            <SubjectId Legacy="True">1</SubjectId>
-            <YearId Legacy="True">7</YearId>
-            <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
-            <Author Legacy="True">SimonBowen65163237490240</Author>
-            <SetNumber>1</SetNumber>
-            <Block>A</Block>
-            <SetCode>SETCODE2</SetCode>
-            <Name>SETCODE2</Name>
-            <Teachers>
-                <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
-                <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
-            </Teachers>
-            <Description />
-            <LastUpdated>2015-09-11T14:09:09</LastUpdated>
-        </Set>
-        <Set Id="3" SubjectId="1" YearId="7" AuthorId="1">
-            <SubjectId Legacy="True">1</SubjectId>
-            <YearId Legacy="True">7</YearId>
-            <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
-            <Author Legacy="True">SimonBowen65163237490240</Author>
-            <SetNumber>1</SetNumber>
-            <Block>A</Block>
-            <SetCode>SETCODE3</SetCode>
-            <Name>SETCODE3</Name>
-            <Teachers>
-                <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
-                <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
-            </Teachers>
-            <Description />
-            <LastUpdated>2015-09-11T14:09:09</LastUpdated>
-        </Set>
-    </Sets>
-    <SetLists>
-        <SetList Id="1" SetId="1" PupilId="1" AuthorId="1">
-            <SetId Legacy="True">1</SetId>
-            <SchoolId Legacy="True">1359077297161</SchoolId>
-            <Author Legacy="True"></Author>
-            <LastUpdated></LastUpdated>
-        </SetList>
-        <SetList Id="2" SetId="1" PupilId="2" AuthorId="1">
-            <SetId Legacy="True">1</SetId>
-            <SchoolId Legacy="True">1359077297161</SchoolId>
-            <Author Legacy="True"></Author>
-            <LastUpdated></LastUpdated>
-        </SetList>
-    </SetLists>
-    <CurrentPupils>
-        <Pupil Id="1">
-            <SchoolCode>17994</SchoolCode>
-            <SchoolId>1630785976</SchoolId>
-            <UserCode>9BOWENS001</UserCode>
-            <UserName>9bowens</UserName>
-            <Title>Mr</Title>
-            <Forename>Simon</Forename>
-            <Surname>Bowen</Surname>
-            <Middlename>Edward</Middlename>
-            <Initials>SEB</Initials>
-            <Preferredname>Simon</Preferredname>
-            <Fullname>Simon Bowen</Fullname>
-            <Gender>M</Gender>
-            <DOB>1998-01-15T00:00:00</DOB>
-            <BoardingHouse>Green</BoardingHouse>
-            <NCYear>13</NCYear>
-            <EmailAddress>9bowens@isams.org</EmailAddress>
-            <PupilType>Boarder</PupilType>
-            <EnrolmentDate>2009-09-07T00:00:00</EnrolmentDate>
-            <EnrolmentTerm>EnrolmentTerm</EnrolmentTerm>
-            <EnrolmentSchoolYear>2009</EnrolmentSchoolYear>
-        </Pupil>
-        <Pupil Id="2">
-            <SchoolCode>18031</SchoolCode>
-            <SchoolId>1630688728</SchoolId>
-            <UserCode>ReginaldKray103117279191232</UserCode>
-            <UserName>9krayr</UserName>
-            <Title>Mr</Title>
-            <Forename>Reginald</Forename>
-            <Surname>Kray</Surname>
-            <Middlename />
-            <Initials>RK</Initials>
-            <Preferredname>Reg</Preferredname>
-            <Fullname>Reginald Kray</Fullname>
-            <Gender>M</Gender>
-            <DOB>1999-01-01T00:00:00</DOB>
-            <BoardingHouse>Blue</BoardingHouse>
-            <NCYear>13</NCYear>
-            <EmailAddress>9krayr@isams.org</EmailAddress>
-            <PupilType>Day Boarder</PupilType>
-            <EnrolmentDate>2015-09-07T00:00:00</EnrolmentDate>
-            <EnrolmentTerm>EnrolmentTerm</EnrolmentTerm>
-            <EnrolmentSchoolYear>2009</EnrolmentSchoolYear>
-        </Pupil>
-    </CurrentPupils>
-    <BoardingHouses>
-        <House Id="4" HouseMasterId="223" AssistantHouseMasterId="326">
-            <HouseMaster Legacy="True">SusaraDuToit135615794032576</HouseMaster>
-            <AssistantHouseMaster Legacy="True">LJA29333722646956807</AssistantHouseMaster>
-            <Name>Blue</Name>
-            <Code>BL</Code>
-            <Type>Boarding</Type>
-            <Sex>F</Sex>
-            <Address1 />
-            <Town />
-            <County />
-            <Postcode />
-            <Telephone />
-            <Fax />
-            <PrimaryEmail>anson@royalhospitalschool.org</PrimaryEmail>
-            <Website />
-        </House>
-        <House Id="1" HouseMasterId="333" AssistantHouseMasterId="430">
-            <HouseMaster Legacy="True">EJM26039874978470404</HouseMaster>
-            <AssistantHouseMaster Legacy="True">GEC30293817158816004</AssistantHouseMaster>
-            <Name>Green</Name>
-            <Code>GR</Code>
-            <Type>Boarding</Type>
-            <Sex>U</Sex>
-            <Address1 />
-            <Town />
-            <County />
-            <Postcode />
-            <Telephone />
-            <Fax />
-            <PrimaryEmail>blake@royalhospitalschool.org</PrimaryEmail>
-            <Website />
-        </House>
-    </BoardingHouses>
+    <HRManager>
+        <CurrentStaff>
+            <StaffMember Id="1">
+                <PreviousMISId>1000</PreviousMISId>
+                <Initials>SEB</Initials>
+                <UserCode>SimonBowen65163237490240</UserCode>
+                <UserName>SBOWEN</UserName>
+                <Title>Mr</Title>
+                <Forename>Simon</Forename>
+                <MiddleNames>Edward</MiddleNames>
+                <Surname>Bowen</Surname>
+                <FullName>Simon Bowen</FullName>
+                <NameInitials>S B</NameInitials>
+                <PreferredName>Simon</PreferredName>
+                <Salutation>Mr Bowen</Salutation>
+                <DOB>1968-05-12T00:00:00</DOB>
+                <Gender>M</Gender>
+                <SchoolEmailAddress>sbowen@isams.com</SchoolEmailAddress>
+            </StaffMember>
+            <StaffMember Id="2">
+                <PreviousMISId>1001</PreviousMISId>
+                <Initials>AD</Initials>
+                <UserCode>RobertSmith29333722646956807</UserCode>
+                <UserName>BSMITH</UserName>
+                <Title>Mr</Title>
+                <Forename>Robert</Forename>
+                <MiddleNames />
+                <Surname>Smith</Surname>
+                <FullName>Robert Smith</FullName>
+                <NameInitials>R S</NameInitials>
+                <PreferredName>Bob</PreferredName>
+                <Salutation>Mr Smith</Salutation>
+                <DOB>2014-11-21T00:00:00</DOB>
+                <Gender>M</Gender>
+                <SchoolEmailAddress>rsmith@isams.com</SchoolEmailAddress>
+            </StaffMember>
+            <StaffMember Id="3">
+                <PreviousMISId>1003</PreviousMISId>
+                <Initials>DA</Initials>
+                <UserCode>DamienAlborn94132280653568</UserCode>
+                <UserName>DALBORN</UserName>
+                <Title>Mr</Title>
+                <Forename>Damien</Forename>
+                <MiddleNames />
+                <Surname>Alborn</Surname>
+                <FullName>Damien Alborn</FullName>
+                <NameInitials>D A</NameInitials>
+                <PreferredName>Damien</PreferredName>
+                <Salutation>Mr Alborn</Salutation>
+                <DOB>1976-02-13T00:00:00</DOB>
+                <Gender>M</Gender>
+                <SchoolEmailAddress>dalborn@isams.com</SchoolEmailAddress>
+            </StaffMember>
+        </CurrentStaff>
+    </HRManager>
+    <TeachingManager>
+        <Sets>
+            <Set Id="1" SubjectId="1" YearId="7" AuthorId="1">
+                <SubjectId Legacy="True">1</SubjectId>
+                <YearId Legacy="True">7</YearId>
+                <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
+                <Author Legacy="True">SimonBowen65163237490240</Author>
+                <SetNumber>1</SetNumber>
+                <Block>A</Block>
+                <SetCode>SETCODE1</SetCode>
+                <Name>SETCODE1</Name>
+                <Teachers>
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
+                </Teachers>
+                <Description />
+                <LastUpdated>2015-09-11T14:09:09</LastUpdated>
+            </Set>
+            <Set Id="2" SubjectId="1" YearId="7" AuthorId="1">
+                <SubjectId Legacy="True">1</SubjectId>
+                <YearId Legacy="True">7</YearId>
+                <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
+                <Author Legacy="True">SimonBowen65163237490240</Author>
+                <SetNumber>1</SetNumber>
+                <Block>A</Block>
+                <SetCode>SETCODE2</SetCode>
+                <Name>SETCODE2</Name>
+                <Teachers>
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
+                </Teachers>
+                <Description />
+                <LastUpdated>2015-09-11T14:09:09</LastUpdated>
+            </Set>
+            <Set Id="3" SubjectId="1" YearId="7" AuthorId="1">
+                <SubjectId Legacy="True">1</SubjectId>
+                <YearId Legacy="True">7</YearId>
+                <Teacher Legacy="True">SimonBowen65163237490240</Teacher>
+                <Author Legacy="True">SimonBowen65163237490240</Author>
+                <SetNumber>1</SetNumber>
+                <Block>A</Block>
+                <SetCode>SETCODE3</SetCode>
+                <Name>SETCODE3</Name>
+                <Teachers>
+                    <Teacher Id="1" StaffId="1" PrimaryTeacher="True" />
+                    <Teacher Id="2" StaffId="2" PrimaryTeacher="False" />
+                </Teachers>
+                <Description />
+                <LastUpdated>2015-09-11T14:09:09</LastUpdated>
+            </Set>
+        </Sets>
+        <SetLists>
+            <SetList Id="1" SetId="1" PupilId="1" AuthorId="1">
+                <SetId Legacy="True">1</SetId>
+                <SchoolId Legacy="True">1359077297161</SchoolId>
+                <Author Legacy="True"></Author>
+                <LastUpdated></LastUpdated>
+            </SetList>
+            <SetList Id="2" SetId="1" PupilId="2" AuthorId="1">
+                <SetId Legacy="True">1</SetId>
+                <SchoolId Legacy="True">1359077297161</SchoolId>
+                <Author Legacy="True"></Author>
+                <LastUpdated></LastUpdated>
+            </SetList>
+        </SetLists>
+    </TeachingManager>
+    <PupilManager>
+        <CurrentPupils>
+            <Pupil Id="1">
+                <SchoolCode>17994</SchoolCode>
+                <SchoolId>1630785976</SchoolId>
+                <UserCode>9BOWENS001</UserCode>
+                <UserName>9bowens</UserName>
+                <Title>Mr</Title>
+                <Forename>Simon</Forename>
+                <Surname>Bowen</Surname>
+                <Middlename>Edward</Middlename>
+                <Initials>SEB</Initials>
+                <Preferredname>Simon</Preferredname>
+                <Fullname>Simon Bowen</Fullname>
+                <Gender>M</Gender>
+                <DOB>1998-01-15T00:00:00</DOB>
+                <BoardingHouse>Green</BoardingHouse>
+                <NCYear>13</NCYear>
+                <EmailAddress>9bowens@isams.org</EmailAddress>
+                <PupilType>Boarder</PupilType>
+                <EnrolmentDate>2009-09-07T00:00:00</EnrolmentDate>
+                <EnrolmentTerm>EnrolmentTerm</EnrolmentTerm>
+                <EnrolmentSchoolYear>2009</EnrolmentSchoolYear>
+            </Pupil>
+            <Pupil Id="2">
+                <SchoolCode>18031</SchoolCode>
+                <SchoolId>1630688728</SchoolId>
+                <UserCode>ReginaldKray103117279191232</UserCode>
+                <UserName>9krayr</UserName>
+                <Title>Mr</Title>
+                <Forename>Reginald</Forename>
+                <Surname>Kray</Surname>
+                <Middlename />
+                <Initials>RK</Initials>
+                <Preferredname>Reg</Preferredname>
+                <Fullname>Reginald Kray</Fullname>
+                <Gender>M</Gender>
+                <DOB>1999-01-01T00:00:00</DOB>
+                <BoardingHouse>Blue</BoardingHouse>
+                <NCYear>13</NCYear>
+                <EmailAddress>9krayr@isams.org</EmailAddress>
+                <PupilType>Day Boarder</PupilType>
+                <EnrolmentDate>2015-09-07T00:00:00</EnrolmentDate>
+                <EnrolmentTerm>EnrolmentTerm</EnrolmentTerm>
+                <EnrolmentSchoolYear>2009</EnrolmentSchoolYear>
+            </Pupil>
+        </CurrentPupils>
+    </PupilManager>
+    <SchoolManager>
+        <BoardingHouses>
+            <House Id="4" HouseMasterId="223" AssistantHouseMasterId="326">
+                <HouseMaster Legacy="True">SusaraDuToit135615794032576</HouseMaster>
+                <AssistantHouseMaster Legacy="True">LJA29333722646956807</AssistantHouseMaster>
+                <Name>Blue</Name>
+                <Code>BL</Code>
+                <Type>Boarding</Type>
+                <Sex>F</Sex>
+                <Address1 />
+                <Town />
+                <County />
+                <Postcode />
+                <Telephone />
+                <Fax />
+                <PrimaryEmail>anson@royalhospitalschool.org</PrimaryEmail>
+                <Website />
+            </House>
+            <House Id="1" HouseMasterId="333" AssistantHouseMasterId="430">
+                <HouseMaster Legacy="True">EJM26039874978470404</HouseMaster>
+                <AssistantHouseMaster Legacy="True">GEC30293817158816004</AssistantHouseMaster>
+                <Name>Green</Name>
+                <Code>GR</Code>
+                <Type>Boarding</Type>
+                <Sex>U</Sex>
+                <Address1 />
+                <Town />
+                <County />
+                <Postcode />
+                <Telephone />
+                <Fax />
+                <PrimaryEmail>blake@royalhospitalschool.org</PrimaryEmail>
+                <Website />
+            </House>
+        </BoardingHouses>
+    </SchoolManager>
 </iSAMS>

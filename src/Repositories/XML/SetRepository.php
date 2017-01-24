@@ -43,7 +43,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
      */
     public function getById($id)
     {
-        $set = $this->xml->xpath("/iSAMS/Sets/Set[@Id={$id}]");
+        $set = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[@Id={$id}]");
 
         if (!isset($set[0])) {
             throw new SetNotFound("Set not found with ID {$id}");
@@ -54,7 +54,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
 
     public function getBySetCode($code)
     {
-        $set = $this->xml->xpath("/iSAMS/Sets/Set[SetCode = '{$code}']");
+        $set = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[SetCode = '{$code}']");
 
         if (!isset($set[0])) {
             throw new SetNotFound("Set not found with Code {$code}");
@@ -76,7 +76,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
         $teachers = new Collection();
 
         foreach ($set->getTeachers() as $id) {
-            $staff = $this->xml->xpath("/iSAMS/CurrentStaff/StaffMember[@Id={$id}]");
+            $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$id}]");
             $teachers->push($this->staffHydrator->hydrate($staff[0]));
         }
 
@@ -90,13 +90,13 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
      */
     public function getPupils($id)
     {
-        $setLists = $this->xml->xpath("/iSAMS/SetLists/SetList[@SetId={$id}]");
+        $setLists = $this->xml->xpath("/iSAMS/TeachingManager/SetLists/SetList[@SetId={$id}]");
         $pupils = new Collection();
 
         foreach ($setLists as $setList) {
             $set = simplexml_import_dom($setList);
             $pupilId = $set->attributes()->PupilId;
-            $pupil = $this->xml->xpath("/iSAMS/CurrentPupils/Pupil[@Id={$pupilId}]")[0];
+            $pupil = $this->xml->xpath("/iSAMS/PupilManager/CurrentPupils/Pupil[@Id={$pupilId}]")[0];
             $pupils->push($this->pupilHydrator->hydrate($pupil));
         }
 
@@ -110,10 +110,10 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
      */
     public function getPrimaryTeacher($id)
     {
-        $primary = $this->xml->xpath("/iSAMS/Sets/Set[@Id={$id}]/Teachers/Teacher[@PrimaryTeacher='True']")[0];
+        $primary = $this->xml->xpath("/iSAMS/TeachingManager/Sets/Set[@Id={$id}]/Teachers/Teacher[@PrimaryTeacher='True']")[0];
         $primary = simplexml_import_dom($primary);
 
-        $staff = $this->xml->xpath("/iSAMS/CurrentStaff/StaffMember[@Id={$primary->attributes()->StaffId}]");
+        $staff = $this->xml->xpath("/iSAMS/HRManager/CurrentStaff/StaffMember[@Id={$primary->attributes()->StaffId}]");
 
         return $this->staffHydrator->hydrate($staff[0]);
     }
@@ -123,7 +123,7 @@ class SetRepository extends BaseRepository implements SetRepositoryContract
      */
     public function all()
     {
-        $sets = $this->xml->xpath('/iSAMS/Sets/Set');
+        $sets = $this->xml->xpath('/iSAMS/TeachingManager/Sets/Set');
 
         return $this->hydrateAll($sets);
     }
