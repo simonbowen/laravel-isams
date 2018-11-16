@@ -21,6 +21,7 @@ class BoardingHouseHydrator
         $entity->setName((string) $data->Name);
         $entity->setId((int) $data->attributes()->Id);
         $entity->setHousemasterId((int) $data->attributes()->HouseMasterId);
+        $entity->setAssistantHousemasterId((int) $data->attributes()->AssistantHouseMasterId);
         $entity->setCode((string) $data->Code);
         $entity->setSex((string) $data->Sex);
 

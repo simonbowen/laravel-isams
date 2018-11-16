@@ -25,6 +25,7 @@ class BoardingHouseHydrator
         $entity->setSex((string) $boardingHouse->txtSex);
         $entity->setId((int) $boardingHouse->TblSchoolManagementHousesId);
         $entity->setHousemasterId((int) $housemaster->getKey());
+        $entity->assistantHousemasterId((int) $boardingHouse->txtAssistantHouseMaster);
 
         return $entity;
     }

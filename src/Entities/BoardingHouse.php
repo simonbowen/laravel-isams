@@ -9,6 +9,7 @@ class BoardingHouse implements BoardingHouseContract
     protected $name;
     protected $id;
     protected $housemasterId;
+    protected $assistantHousemasterId;
     protected $code;
     protected $sex;
 
@@ -41,9 +42,21 @@ class BoardingHouse implements BoardingHouseContract
         return $this->housemasterId;
     }
 
+    public function getAssistantHouseMaster()
+    {
+        return $this->assistantHousemasterId;
+    }
+
     public function setHousemasterId($id)
     {
         $this->housemasterId = $id;
+
+        return $this;
+    }
+
+    public function setAssistantHousemasterId($id)
+    {
+        $this->assistantHousemasterId = $id;
 
         return $this;
     }
