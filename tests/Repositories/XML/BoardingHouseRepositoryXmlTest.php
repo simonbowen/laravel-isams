@@ -42,6 +42,26 @@ class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('BL', $house->getCode());
     }
 
+    public function test_get_by_boarding_house_master()
+    {
+        $repository = $this->getRepository();
+
+        /** @var \SimonBowen\IsamsDrivers\Entities\Contracts\BoardingHouse $house */
+        $house = $repository->getByHousemasterId(223);
+
+        $this->assertNotEmpty($house);
+    }
+
+    public function test_get_by_boarding_assistant_house_master()
+    {
+        $repository = $this->getRepository();
+
+        /** @var \SimonBowen\IsamsDrivers\Entities\Contracts\BoardingHouse $house */
+        $house = $repository->getByAssistantHousemasterId(326);
+
+        $this->assertNotEmpty($house);
+    }
+
     /**
      * @throws \SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound
      * @expectedException \SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound
