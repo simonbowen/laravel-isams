@@ -41,5 +41,4 @@ class BoardingHouseRepositoryEloquentTest extends BaseTest
     {
         $this->assertTrue(true);
     }
-
 }
