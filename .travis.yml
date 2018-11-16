@@ -1,9 +1,7 @@
 language: php
-
 branches:
   except:
-    - /analysis-*/
-
+    - /^analysis-(.*)/
 php:
   - 5.5.9
   - 5.5
@@ -11,7 +9,5 @@ php:
   - 7.0
   - 7.1
   - 7.2
-	
-
 before_script: composer install
 script: phpunit ./tests
