@@ -3,7 +3,7 @@
 use Mockery as m;
 use SimonBowen\IsamsDrivers\Repositories\XML\BoardingHouseRepository;
 
-class BoardingHouseRepositoryXmlTest extends PHPUnit_Framework_TestCase
+class BoardingHouseRepositoryXmlTest extends BaseTest
 {
     public function getRepository()
     {

@@ -1,6 +1,7 @@
 <?php
+require 'vendor/autoload.php';
 
-abstract class BaseTest extends PHPUnit_Framework_TestCase
+abstract class BaseTest extends \PHPUnit\Framework\TestCase
 {
     public function tearDown()
     {

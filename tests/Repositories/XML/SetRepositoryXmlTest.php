@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class SetRepositoryXmlTest extends PHPUnit_Framework_TestCase
+class SetRepositoryXmlTest extends BaseTest
 {
     public function getRepository()
     {

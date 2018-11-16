@@ -36,9 +36,10 @@ class BoardingHouseRepositoryEloquentTest extends BaseTest
         return $models;
     }
 
-    public function test_get_all_boarding_houses()
+    // Placeholder as I need to test the Eloquent driver properly in the future
+    public function test_placeholder()
     {
+        $this->assertTrue(true);
     }
 
-    // TODO: Work out a way to create tests that work when hydrating an object that uses a related model
 }
