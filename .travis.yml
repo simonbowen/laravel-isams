@@ -1,8 +1,8 @@
 language: php
 
 branches:
-	except:
-		- /analysis-*/
+  except:
+    - /analysis-*/
 
 php:
   - 5.5.9
