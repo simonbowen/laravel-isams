@@ -39,7 +39,7 @@ class IsamsDriversProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/isams.php' => config_path('isams.php'),
-        ]);
+        ], 'config');
     }
 
     public function register()
