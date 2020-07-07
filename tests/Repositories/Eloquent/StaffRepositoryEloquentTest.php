@@ -1,10 +1,11 @@
 <?php
 
 use Mockery as m;
+use SimonBowen\IsamsDrivers\Models\Staff;
 
 class StaffRepositoryEloquentTest extends BaseTest
 {
-    protected function getRepository(\SimonBowen\IsamsDrivers\Models\Staff $model)
+    protected function getRepository(Staff $model)
     {
         $entity = new \SimonBowen\IsamsDrivers\Entities\Staff();
         $hydrator = new \SimonBowen\IsamsDrivers\Repositories\Eloquent\Hydrators\StaffHydrator($entity);
@@ -16,7 +17,7 @@ class StaffRepositoryEloquentTest extends BaseTest
     public function generateStaff()
     {
         $faker = Faker\Factory::create();
-        $staff = new \SimonBowen\IsamsDrivers\Models\Staff();
+        $staff = new Staff();
 
         $firstname = $faker->firstName;
         $surname = $faker->lastName;
@@ -52,7 +53,7 @@ class StaffRepositoryEloquentTest extends BaseTest
 
     public function test_get_all_staff_members()
     {
-        $model = m::mock(\SimonBowen\IsamsDrivers\Models\Staff::class);
+        $model = m::mock(Staff::class);
         $model->shouldReceive('all')->once()->andReturn($this->getData());
 
         $repository = $this->getRepository($model);
@@ -66,7 +67,7 @@ class StaffRepositoryEloquentTest extends BaseTest
         $id = 1001;
         $member = $this->generateStaff();
 
-        $model = m::mock(\SimonBowen\IsamsDrivers\Models\Staff::class);
+        $model = m::mock(Staff::class);
         $model->shouldReceive('find')->with($id)->once()->andReturn($member);
 
         $repository = $this->getRepository($model);
@@ -80,7 +81,7 @@ class StaffRepositoryEloquentTest extends BaseTest
     {
         $member = $this->generateStaff();
 
-        $model = m::mock(\SimonBowen\IsamsDrivers\Models\Staff::class);
+        $model = m::mock(Staff::class);
         $model
             ->shouldReceive('where')
             ->with('SchoolEmailAddress', $member->SchoolEmailAddress)

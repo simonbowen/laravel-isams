@@ -11,15 +11,15 @@
   ],
   "require": {
     "php": ">=7.3.0",
-    "illuminate/database": "~5.8",
-    "illuminate/support": "~5.8",
-    "illuminate/cache": "~5.8",
-    "illuminate/config": "~5.8"
+    "illuminate/database": "~5.8|^6.0",
+    "illuminate/support": "~5.8|^6.0",
+    "illuminate/cache": "~5.8|^6.0",
+    "illuminate/config": "~5.8|^6.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
-    "phpunit/phpunit": "~6.0",
-    "mockery/mockery": "~0.9.1"
+    "phpunit/phpunit": "~8.0",
+    "mockery/mockery": "~1.4"
   },
   "autoload": {
     "psr-4": {
