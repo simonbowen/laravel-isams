@@ -64,10 +64,11 @@ class BoardingHouseRepositoryXmlTest extends BaseTest
 
     /**
      * @throws \SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound
-     * @expectedException \SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound
+     *
      */
     public function test_pupil_not_found_exception()
     {
+        $this->expectException(\SimonBowen\IsamsDrivers\Repositories\Exceptions\BoardingHouseNotFound::class);
         $repository = $this->getRepository();
         $house = $repository->getById(1000);
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Mockery as m;
+use SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound;
 
 class PupilRepositoryXmlTest extends BaseTest
 {
@@ -196,21 +197,21 @@ class PupilRepositoryXmlTest extends BaseTest
     }
 
     /**
-     * @throws \SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound
-     * @expectedException \SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound
+     * @throws PupilNotFound
      */
     public function test_throws_pupil_not_found_exception_by_id()
     {
+        $this->expectException(PupilNotFound::class);
         $repository = $this->getRepository();
         $pupil = $repository->getById(1000000000000);
     }
 
     /**
-     * @throws \SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound
-     * @expectedException \SimonBowen\IsamsDrivers\Repositories\Exceptions\PupilNotFound
+     * @throws PupilNotFound
      */
     public function test_throws_pupil_not_found_exception_by_email()
     {
+        $this->expectException(PupilNotFound::class);
         $repository = $this->getRepository();
         $pupil = $repository->getByEmail('steve.jobs@apple.com');
     }
